@@ -44,7 +44,7 @@ namespace aMUXClasses
     public Personal()
     {
       _type = "personal";
-      _date = DateTime.Now.ToString();
+      _date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
       _text = "";
       _photo = "";
     }

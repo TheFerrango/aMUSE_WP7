@@ -29,7 +29,9 @@
     private void InitializeComponent()
     {
       this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+      this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+      this.saveJSONToFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.btnGenerate = new System.Windows.Forms.Button();
       this.progressBar1 = new System.Windows.Forms.ProgressBar();
       this.textBox1 = new System.Windows.Forms.TextBox();
@@ -37,8 +39,6 @@
       this.btnSend = new System.Windows.Forms.Button();
       this.textBox2 = new System.Windows.Forms.TextBox();
       this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-      this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
-      this.saveJSONToFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
       this.statusStrip1.SuspendLayout();
       this.menuStrip1.SuspendLayout();
@@ -54,6 +54,12 @@
       this.statusStrip1.TabIndex = 0;
       this.statusStrip1.Text = "statusStrip1";
       // 
+      // lblStatus
+      // 
+      this.lblStatus.Name = "lblStatus";
+      this.lblStatus.Size = new System.Drawing.Size(66, 20);
+      this.lblStatus.Text = "lblStatus";
+      // 
       // menuStrip1
       // 
       this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -63,6 +69,13 @@
       this.menuStrip1.Size = new System.Drawing.Size(499, 28);
       this.menuStrip1.TabIndex = 1;
       this.menuStrip1.Text = "menuStrip1";
+      // 
+      // saveJSONToFileToolStripMenuItem
+      // 
+      this.saveJSONToFileToolStripMenuItem.Name = "saveJSONToFileToolStripMenuItem";
+      this.saveJSONToFileToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+      this.saveJSONToFileToolStripMenuItem.Text = "Save JSON to file";
+      this.saveJSONToFileToolStripMenuItem.Click += new System.EventHandler(this.saveJSONToFileToolStripMenuItem_Click);
       // 
       // btnGenerate
       // 
@@ -87,7 +100,7 @@
       this.textBox1.Name = "textBox1";
       this.textBox1.Size = new System.Drawing.Size(224, 22);
       this.textBox1.TabIndex = 4;
-      this.textBox1.Text = "http://";
+      this.textBox1.Text = "http://:8000/api/save/";
       // 
       // label1
       // 
@@ -122,19 +135,6 @@
       // 
       this.backgroundWorker1.WorkerReportsProgress = true;
       this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-      // 
-      // lblStatus
-      // 
-      this.lblStatus.Name = "lblStatus";
-      this.lblStatus.Size = new System.Drawing.Size(66, 20);
-      this.lblStatus.Text = "lblStatus";
-      // 
-      // saveJSONToFileToolStripMenuItem
-      // 
-      this.saveJSONToFileToolStripMenuItem.Name = "saveJSONToFileToolStripMenuItem";
-      this.saveJSONToFileToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
-      this.saveJSONToFileToolStripMenuItem.Text = "Save JSON to file";
-      this.saveJSONToFileToolStripMenuItem.Click += new System.EventHandler(this.saveJSONToFileToolStripMenuItem_Click);
       // 
       // saveFileDialog1
       // 

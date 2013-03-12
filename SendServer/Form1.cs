@@ -37,18 +37,30 @@ namespace SendServer
 
     private void btnSend_Click(object sender, EventArgs e)
     {
-      lblStatus.Text = "Now attempting to send JSON.";
-      try
-      {
+    //http://10.23.3.102:8000/api/save/
+  
         WebClient wc = new WebClient();
+        wc.UploadStringCompleted += new UploadStringCompletedEventHandler(wc_UploadStringCompleted);
         wc.Headers["Content-Type"] = "application/json";
-        wc.UploadString(new Uri(textBox1.Text), jsonFinale);
+        lblStatus.Text = "Now attempting to send JSON.";
+
+        try
+        {
+          wc.UploadStringAsync(new Uri(textBox1.Text), jsonFinale);
+        }
+        catch {
+          lblStatus.Text = "Failed miserably.";
+        }
+     
+    }
+
+    void wc_UploadStringCompleted(object sender, UploadStringCompletedEventArgs e)
+    {
+      if (e.Error != null)
+        lblStatus.Text = "Failed miserably";
+      else
         lblStatus.Text = "Huge success!";
-      }
-      catch
-      {
-        lblStatus.Text = "Faild miserably.";
-      }
+
     }
 
     private void btnGenerate_Click(object sender, EventArgs e)
