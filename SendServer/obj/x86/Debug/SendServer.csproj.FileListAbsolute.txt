@@ -1,0 +1,11 @@
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\SendServer\bin\Debug\SendServer.exe
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\SendServer\bin\Debug\SendServer.pdb
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\SendServer\bin\Debug\aMUXClasses.dll
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\SendServer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\SendServer\bin\Debug\aMUXClasses.pdb
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\SendServer\obj\x86\Debug\SendServer.csprojResolveAssemblyReference.cache
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\SendServer\obj\x86\Debug\SendServer.Form1.resources
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\SendServer\obj\x86\Debug\SendServer.Properties.Resources.resources
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\SendServer\obj\x86\Debug\SendServer.csproj.GenerateResource.Cache
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\SendServer\obj\x86\Debug\SendServer.exe
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\SendServer\obj\x86\Debug\SendServer.pdb

@@ -1,0 +1,16 @@
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\Bin\Debug\ApplicationIcon.png
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\Bin\Debug\Background.png
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\Bin\Debug\aMUX.dll
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\Bin\Debug\aMUX.pdb
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\Bin\Debug\AppManifest.xaml
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\Bin\Debug\aMUX.xap
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\Bin\Debug\Microsoft.Phone.Controls.dll
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\Bin\Debug\Microsoft.Phone.Controls.xml
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\obj\Debug\aMUX.csprojResolveAssemblyReference.cache
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\obj\Debug\App.g.i.cs
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\obj\Debug\MainPage.g.i.cs
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\obj\Debug\aMUX.g.resources
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\obj\Debug\aMUX.dll
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\obj\Debug\aMUX.pdb
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\obj\Debug\XapCacheFile.xml
