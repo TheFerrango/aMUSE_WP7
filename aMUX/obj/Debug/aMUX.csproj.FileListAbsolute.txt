@@ -14,3 +14,6 @@ C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\obj\Debug\aMUX.g.resources
 C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\obj\Debug\aMUX.dll
 C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\obj\Debug\aMUX.pdb
 C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\obj\Debug\XapCacheFile.xml
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\obj\Debug\StartPage.g.i.cs
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\obj\Debug\aMUX.csproj.GenerateResource.Cache
+C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUX\obj\Debug\aMUX.Languages.LangsRes.resources
