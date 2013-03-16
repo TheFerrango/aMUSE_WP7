@@ -15,43 +15,43 @@ namespace aMUX
 {
   public class ItemViewModel : INotifyPropertyChanged
   {
-    private string _lineOne;
+    private string _operaName;
     /// <summary>
     /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
     /// </summary>
     /// <returns></returns>
-    public string LineOne
+    public string OperaName
     {
       get
       {
-        return _lineOne;
+        return _operaName;
       }
       set
       {
-        if (value != _lineOne)
+        if (value != _operaName)
         {
-          _lineOne = value;
+          _operaName = value;
           NotifyPropertyChanged("LineOne");
         }
       }
     }
 
-    private string _lineTwo;
+    private string _contentLine;
     /// <summary>
     /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
     /// </summary>
     /// <returns></returns>
-    public string LineTwo
+    public string ContentLine
     {
       get
       {
-        return _lineTwo;
+        return _contentLine;
       }
       set
       {
-        if (value != _lineTwo)
+        if (value != _contentLine)
         {
-          _lineTwo = value;
+          _contentLine = value;
           NotifyPropertyChanged("LineTwo");
         }
       }
@@ -79,6 +79,7 @@ namespace aMUX
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
+
     private void NotifyPropertyChanged(String propertyName)
     {
       PropertyChangedEventHandler handler = PropertyChanged;
