@@ -124,6 +124,7 @@
     <Resource Include="PanoramaBackground.png" />
     <Resource Include="Images\opera.png" />
     <Resource Include="Images\picture.png" />
+    <Content Include="Images\appbar.check.rest.png" />
     <Content Include="Images\TagGen.png" />
     <Content Include="Images\Comment.png" />
     <Content Include="Images\Photo.png" />

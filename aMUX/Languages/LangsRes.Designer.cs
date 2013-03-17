@@ -95,5 +95,14 @@ namespace aMUX.Languages {
                 return ResourceManager.GetString("lblEmail", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nah, sorry, feature not implemented..
+        /// </summary>
+        public static string msgNotImpl {
+            get {
+                return ResourceManager.GetString("msgNotImpl", resourceCulture);
+            }
+        }
     }
 }

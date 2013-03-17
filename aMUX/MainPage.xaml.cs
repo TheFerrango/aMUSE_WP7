@@ -33,6 +33,8 @@ namespace aMUX
       {
         App.ViewModel.LoadData();
       }
+      while (NavigationService.CanGoBack)
+        NavigationService.RemoveBackEntry();
     }
 
     private void btnRead_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -43,13 +45,16 @@ namespace aMUX
     private void btnPhoto_Tap(object sender, System.Windows.Input.GestureEventArgs e)
     {
       App.ViewModel.Items.Add(new ItemViewModel() { OperaName = "Coop", ActualContent = new aMUXClasses.Personal("banana", "base64") });
-
     }
 
     private void btnComment_Tap(object sender, System.Windows.Input.GestureEventArgs e)
     {
       App.ViewModel.Items.Add(new ItemViewModel() { OperaName = "Coop", ActualContent = new aMUXClasses.Personal("banana") });
+    }
 
+    private void btnSend_Click(object sender, EventArgs e)
+    {
+      MessageBox.Show(Languages.LangsRes.msgNotImpl);
     }
   }
 }
