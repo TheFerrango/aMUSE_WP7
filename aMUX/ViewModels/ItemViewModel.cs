@@ -10,6 +10,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using aMUXClasses;
+
 
 namespace aMUX
 {
@@ -36,45 +38,36 @@ namespace aMUX
       }
     }
 
-    private string _contentLine;
-    /// <summary>
-    /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
-    /// </summary>
-    /// <returns></returns>
-    public string ContentLine
+    private Personal _actualContent;
+
+    public Personal ActualContent
     {
-      get
-      {
-        return _contentLine;
-      }
+      get { return _actualContent; }
       set
       {
-        if (value != _contentLine)
+        if (value != _actualContent)
         {
-          _contentLine = value;
-          NotifyPropertyChanged("LineTwo");
+          
+          _actualContent = value;
+          NotifyPropertyChanged("Content");
         }
       }
     }
 
-    private string _lineThree;
-    /// <summary>
-    /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
-    /// </summary>
-    /// <returns></returns>
-    public string LineThree
+
+    public string WhatContains
     {
-      get
-      {
-        return _lineThree;
-      }
-      set
-      {
-        if (value != _lineThree)
-        {
-          _lineThree = value;
-          NotifyPropertyChanged("LineThree");
-        }
+      get { return _actualContent.ToString(); }
+    }
+
+    public string ContentImage
+    {
+      get {
+        if (WhatContains.Contains("scan"))
+          return "Images/opera.png";
+        if(WhatContains.Contains("photo"))
+          return "Images/picture.png";
+        return "Images/Text.png";
       }
     }
 

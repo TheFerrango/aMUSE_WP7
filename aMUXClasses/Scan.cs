@@ -37,5 +37,15 @@ namespace aMUXClasses
     {
       base.photo = photo_b64;
     }
+
+    public override string ToString()
+    {
+      string toReturn = "scan";
+      if (base.text != "")
+        toReturn += ", comment";
+      if (base.photo != "")
+        toReturn += ", photo";
+      return toReturn;
+    }
   }
 }

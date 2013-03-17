@@ -61,23 +61,6 @@ namespace aMUX
     public void LoadData()
     {
       // Sample data; replace with real data
-      this.Items.Add(new ItemViewModel() { OperaName = "Adolf mustache", ContentLine = "tag, comment", LineThree = "Facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu" });
-      this.Items.Add(new ItemViewModel() { OperaName = "MP-40", ContentLine = "tag", LineThree = "Suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus" });
-      this.Items.Add(new ItemViewModel() { OperaName = "WP_013846", ContentLine = "photo", LineThree = "Habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent" });
-      this.Items.Add(new ItemViewModel() { OperaName = "text", ContentLine = "comment", LineThree = "Ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos" });
-      this.Items.Add(new ItemViewModel() { OperaName = "Jerks", ContentLine = "photo, comment", LineThree = "Maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur" });
-      this.Items.Add(new ItemViewModel() { OperaName = "runtime six", ContentLine = "Dictumst eleifend facilisi faucibus", LineThree = "Pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent" });
-      this.Items.Add(new ItemViewModel() { OperaName = "runtime seven", ContentLine = "Habitant inceptos interdum lobortis", LineThree = "Accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat" });
-      this.Items.Add(new ItemViewModel() { OperaName = "runtime eight", ContentLine = "Nascetur pharetra placerat pulvinar", LineThree = "Pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum" });
-      this.Items.Add(new ItemViewModel() { OperaName = "runtime nine", ContentLine = "Maecenas praesent accumsan bibendum", LineThree = "Facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu" });
-      this.Items.Add(new ItemViewModel() { OperaName = "runtime ten", ContentLine = "Dictumst eleifend facilisi faucibus", LineThree = "Suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus" });
-      this.Items.Add(new ItemViewModel() { OperaName = "runtime eleven", ContentLine = "Habitant inceptos interdum lobortis", LineThree = "Habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent" });
-      this.Items.Add(new ItemViewModel() { OperaName = "runtime twelve", ContentLine = "Nascetur pharetra placerat pulvinar", LineThree = "Ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos" });
-      this.Items.Add(new ItemViewModel() { OperaName = "runtime thirteen", ContentLine = "Maecenas praesent accumsan bibendum", LineThree = "Maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur" });
-      this.Items.Add(new ItemViewModel() { OperaName = "runtime fourteen", ContentLine = "Dictumst eleifend facilisi faucibus", LineThree = "Pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent" });
-      this.Items.Add(new ItemViewModel() { OperaName = "runtime fifteen", ContentLine = "Habitant inceptos interdum lobortis", LineThree = "Accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat" });
-      this.Items.Add(new ItemViewModel() { OperaName = "runtime sixteen", ContentLine = "Nascetur pharetra placerat pulvinar", LineThree = "Pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum" });
-
       this.IsDataLoaded = true;
     }
 

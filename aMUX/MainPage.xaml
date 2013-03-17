@@ -290,9 +290,9 @@
 
 
   <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
- 
-        <!--Panorama control-->
+  <Grid x:Name="LayoutRoot" Background="Transparent">
+
+    <!--Panorama control-->
     <controls:Panorama x:Name="bigPanorama">
       <controls:Panorama.Title >
         <Grid Height="200">
@@ -301,8 +301,8 @@
       </controls:Panorama.Title>
 
       <!--Panorama item one-->
-            <controls:PanoramaItem Header="Create">
-                <!--Double line list with text wrapping-->
+      <controls:PanoramaItem Header="Create">
+        <!--Double line list with text wrapping-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
           <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -320,7 +320,7 @@
         Opacity="100"                                     
         Margin="0,0,0,10"
         Name="btnRead"
-             
+             Tap="btnRead_Tap"
         HorizontalAlignment="Left" 
         Grid.ColumnSpan="2" Width="356" Style="{StaticResource bigone}"
                        />
@@ -331,8 +331,8 @@
         Title="Photo"
         Opacity="100"                                     
         Margin="0,0,0,10"
-        Name="btnAdd"
-                  
+        Name="btnPhoto"
+                  Tap="btnPhoto_Tap"
         HorizontalAlignment="Left" 
                        Style="{StaticResource kleinone}"
       
@@ -344,34 +344,35 @@
         Title="Comment"                         
         Opacity="100"                                     
         Margin="10,0,0,10"
-        Name="btnOpt"
-                       
+        Name="btnComment"
+                       Tap="btnComment_Tap"
         HorizontalAlignment="Left" 
         Style="{StaticResource kleinone}"
-          />
-
+                           
+          />          
         </Grid>
       </controls:PanoramaItem>
- 
-            <!--Panorama item two-->
-            <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
-            <controls:PanoramaItem Header="My items">
-                <!--Double line list with image placeholder and text wrapping-->
-                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
-                                <!--Replace rectangle with image-->
-                                <Rectangle Height="100" Width="100" Fill="#FFE5001b" Margin="12,0,9,0"/>
-                                <StackPanel Width="311">                                    
-                                    <TextBlock Text="{Binding OperaName}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                    <TextBlock Text="{Binding ContentLine}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </controls:PanoramaItem>
-        </controls:Panorama>
-    </Grid>
+
+      <!--Panorama item two-->
+      <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
+      <controls:PanoramaItem Header="My items">
+        <!--Double line list with image placeholder and text wrapping-->
+        <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items}">
+          <ListBox.ItemTemplate>
+            <DataTemplate>
+              <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
+                <!--Replace rectangle with image-->
+                <!--<Rectangle Height="100"  Width="100" Fill="#FFE5001b" Margin="12,0,9,0"/>-->
+                <Image Margin="12,0,9,0" Height="100" Width="100" Source="{Binding ContentImage}"></Image>
+                <StackPanel Width="311">
+                  <TextBlock Text="{Binding OperaName}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                  <TextBlock Text="{Binding WhatContains}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                </StackPanel>
+              </StackPanel>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+      </controls:PanoramaItem>
+    </controls:Panorama>
+  </Grid>
 </phone:PhoneApplicationPage>

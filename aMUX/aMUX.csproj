@@ -122,9 +122,12 @@
     <Resource Include="Toolkit.Content\ApplicationBar.Delete.png" />
     <Resource Include="Toolkit.Content\ApplicationBar.Select.png" />
     <Resource Include="PanoramaBackground.png" />
-    <Resource Include="Images\TagGen.png" />
-    <Resource Include="Images\Comment.png" />
-    <Resource Include="Images\Photo.png" />
+    <Resource Include="Images\opera.png" />
+    <Resource Include="Images\picture.png" />
+    <Content Include="Images\TagGen.png" />
+    <Content Include="Images\Comment.png" />
+    <Content Include="Images\Photo.png" />
+    <Resource Include="Images\Text.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
@@ -134,7 +137,12 @@
       <LastGenOutput>LangsRes.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\aMUXClasses\aMUXClasses.csproj">
+      <Project>{B17B2EA9-FF41-4602-9B89-B694D1B6F545}</Project>
+      <Name>aMUXClasses</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

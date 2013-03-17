@@ -60,5 +60,19 @@ namespace aMUXClasses
       _photo = photo_b64;
     }
 
+    public override string ToString()
+    {
+      string toReturn = "";
+      if (text != "")
+      {
+        toReturn = "comment";
+        if (photo != "")
+          toReturn += ", photo";
+      }
+      else
+        toReturn += "photo";
+      return toReturn;
+    }
+
   }
 }
