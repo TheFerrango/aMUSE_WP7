@@ -1,4 +1,0 @@
-C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUXClasses\Bin\Debug\aMUXClasses.dll
-C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUXClasses\Bin\Debug\aMUXClasses.pdb
-C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUXClasses\obj\Debug\aMUXClasses.dll
-C:\Users\Lorenzo\Documents\GitHub\aMUSE_WP7\aMUXClasses\obj\Debug\aMUXClasses.pdb
