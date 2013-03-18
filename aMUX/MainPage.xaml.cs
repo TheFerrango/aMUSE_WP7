@@ -40,6 +40,7 @@ namespace aMUX
     private void btnRead_Tap(object sender, System.Windows.Input.GestureEventArgs e)
     {
       App.ViewModel.Items.Add(new ItemViewModel() { OperaName = "Coop", ActualContent = new aMUXClasses.Scan("-1", "banana", "base64") });
+      NavigationService.Navigate(new Uri("/ScanOpera.xaml", UriKind.Relative));
     }
 
     private void btnPhoto_Tap(object sender, System.Windows.Input.GestureEventArgs e)

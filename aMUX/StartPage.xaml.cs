@@ -22,7 +22,7 @@ namespace aMUX
     public StartPage()
     {
       InitializeComponent();
-      isValid = false;
+      isValid = false;      
     }
 
     private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -50,6 +50,13 @@ namespace aMUX
     private void btnConfMail_Click(object sender, RoutedEventArgs e)
     {
       IsolatedStorageSettings iss = IsolatedStorageSettings.ApplicationSettings;
+
+#if DEBUG
+      NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+      iss["emailAddress"] = "bill@contoso.com";
+
+#endif
+
       if (isValid)
       {
         NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));

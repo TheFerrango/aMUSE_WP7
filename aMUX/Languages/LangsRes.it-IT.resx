@@ -129,9 +129,6 @@
   <data name="lblEmail" xml:space="preserve">
     <value>Enter your email address:</value>
   </data>
-  <data name="lblOperaPage" xml:space="preserve">
-    <value>Opera scan</value>
-  </data>
   <data name="msgNotImpl" xml:space="preserve">
     <value>Nah, sorry, feature not implemented.</value>
   </data>

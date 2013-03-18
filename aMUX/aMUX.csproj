@@ -64,18 +64,17 @@
     <Reference Include="System.Net" />
     <Reference Include="System.Xml" />
     <Reference Include="mscorlib.extensions" />
-    <Reference Include="TCD.Device.Camera">
-      <HintPath>..\packages\TCD.Device.Camera.1.3.2\lib\sl4-wp71\TCD.Device.Camera.dll</HintPath>
-    </Reference>
-    <Reference Include="TCD.Device.Camera.Barcodes">
-      <HintPath>..\packages\TCD.Device.Camera.1.3.2\lib\sl4-wp71\TCD.Device.Camera.Barcodes.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="LangsManager.cs" />
+    <Compile Include="Languages\LangsRes.it-IT.Designer.cs">
+      <DependentUpon>LangsRes.it-IT.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Languages\LangsRes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -84,7 +83,14 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddOpera.xaml.cs">
+      <DependentUpon>AddOpera.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoCameraLuminanceSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScanOpera.xaml.cs">
+      <DependentUpon>ScanOpera.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
@@ -97,6 +103,14 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddOpera.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScanOpera.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,6 +139,8 @@
     <Resource Include="Images\opera.png" />
     <Resource Include="Images\picture.png" />
     <Content Include="Images\appbar.check.rest.png" />
+    <Content Include="Images\appbar.edit.rest.png" />
+    <Resource Include="Images\appbar.feature.camera.rest.png" />
     <Content Include="Images\TagGen.png" />
     <Content Include="Images\Comment.png" />
     <Content Include="Images\Photo.png" />
@@ -133,6 +149,10 @@
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Languages\LangsRes.it-IT.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LangsRes.it-IT.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Languages\LangsRes.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LangsRes.Designer.cs</LastGenOutput>

@@ -97,6 +97,15 @@ namespace aMUX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Opera scan.
+        /// </summary>
+        public static string lblOperaPage {
+            get {
+                return ResourceManager.GetString("lblOperaPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nah, sorry, feature not implemented..
         /// </summary>
         public static string msgNotImpl {
