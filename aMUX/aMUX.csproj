@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Coding4Fun.Toolkit.Controls">
+      <HintPath>..\packages\Coding4Fun.Toolkit.Controls.2.0.2\lib\wp71\Coding4Fun.Toolkit.Controls.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
@@ -70,11 +73,6 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="LangsManager.cs" />
-    <Compile Include="Languages\LangsRes.it-IT.Designer.cs">
-      <DependentUpon>LangsRes.it-IT.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Languages\LangsRes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -140,7 +138,7 @@
     <Resource Include="Images\picture.png" />
     <Content Include="Images\appbar.check.rest.png" />
     <Content Include="Images\appbar.edit.rest.png" />
-    <Resource Include="Images\appbar.feature.camera.rest.png" />
+    <Content Include="Images\appbar.feature.camera.rest.png" />
     <Content Include="Images\TagGen.png" />
     <Content Include="Images\Comment.png" />
     <Content Include="Images\Photo.png" />
@@ -149,10 +147,6 @@
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Languages\LangsRes.it-IT.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>LangsRes.it-IT.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Languages\LangsRes.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LangsRes.Designer.cs</LastGenOutput>

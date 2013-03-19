@@ -120,17 +120,41 @@
   <data name="AppName" xml:space="preserve">
     <value>aMUX</value>
   </data>
+  <data name="btnAccept" xml:space="preserve">
+    <value>Accept</value>
+  </data>
+  <data name="btnAddComment" xml:space="preserve">
+    <value>Add Comment</value>
+  </data>
+  <data name="btnAddPhoto" xml:space="preserve">
+    <value>Add Photo</value>
+  </data>
   <data name="btnConfMailFAIL" xml:space="preserve">
     <value>Please enter a valid email address!</value>
   </data>
   <data name="btnConfMailOK" xml:space="preserve">
     <value>Let's begin!</value>
   </data>
+  <data name="btnRetake" xml:space="preserve">
+    <value>Retake</value>
+  </data>
+  <data name="lblCommentPrev" xml:space="preserve">
+    <value>Custom comment:</value>
+  </data>
   <data name="lblEmail" xml:space="preserve">
     <value>Enter your email address:</value>
   </data>
   <data name="lblOperaPage" xml:space="preserve">
     <value>Opera scan</value>
+  </data>
+  <data name="lblOperaPrev" xml:space="preserve">
+    <value>Opera preview:</value>
+  </data>
+  <data name="lblPhotoPrev" xml:space="preserve">
+    <value>Custom photo:</value>
+  </data>
+  <data name="lblQRScan" xml:space="preserve">
+    <value>Point a QR code to scan</value>
   </data>
   <data name="msgNotImpl" xml:space="preserve">
     <value>Nah, sorry, feature not implemented.</value>

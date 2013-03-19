@@ -70,6 +70,33 @@ namespace aMUX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Accept.
+        /// </summary>
+        public static string btnAccept {
+            get {
+                return ResourceManager.GetString("btnAccept", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Comment.
+        /// </summary>
+        public static string btnAddComment {
+            get {
+                return ResourceManager.GetString("btnAddComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Photo.
+        /// </summary>
+        public static string btnAddPhoto {
+            get {
+                return ResourceManager.GetString("btnAddPhoto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please enter a valid email address!.
         /// </summary>
         public static string btnConfMailFAIL {
@@ -88,6 +115,24 @@ namespace aMUX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Retake.
+        /// </summary>
+        public static string btnRetake {
+            get {
+                return ResourceManager.GetString("btnRetake", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom comment:.
+        /// </summary>
+        public static string lblCommentPrev {
+            get {
+                return ResourceManager.GetString("lblCommentPrev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter your email address:.
         /// </summary>
         public static string lblEmail {
@@ -102,6 +147,33 @@ namespace aMUX.Languages {
         public static string lblOperaPage {
             get {
                 return ResourceManager.GetString("lblOperaPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opera preview:.
+        /// </summary>
+        public static string lblOperaPrev {
+            get {
+                return ResourceManager.GetString("lblOperaPrev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom photo:.
+        /// </summary>
+        public static string lblPhotoPrev {
+            get {
+                return ResourceManager.GetString("lblPhotoPrev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Point a QR code to scan.
+        /// </summary>
+        public static string lblQRScan {
+            get {
+                return ResourceManager.GetString("lblQRScan", resourceCulture);
             }
         }
         
