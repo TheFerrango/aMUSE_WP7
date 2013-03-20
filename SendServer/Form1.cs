@@ -94,7 +94,7 @@ namespace SendServer
       backgroundWorker1.ReportProgress(Convert.ToInt32((9.0 / 11) * 100));
       sc.exp = lp;
       backgroundWorker1.ReportProgress(Convert.ToInt32((10.0 / 11) * 100));
-      jsonFinale = JsonConvert.SerializeObject(sc, Formatting.Indented);
+      jsonFinale = JsonConvert.SerializeObject(sc, Formatting.None);
       backgroundWorker1.ReportProgress(Convert.ToInt32((11.0 / 11) * 100));
     }
 

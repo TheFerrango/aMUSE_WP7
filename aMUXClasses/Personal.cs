@@ -8,6 +8,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using System.Globalization;
 
 namespace aMUXClasses
 {
@@ -44,7 +45,7 @@ namespace aMUXClasses
     public Personal()
     {
       _type = "personal";
-      _date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+      _date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
       _text = "";
       _photo = "";
     }
