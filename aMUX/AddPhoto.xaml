@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage 
-    x:Class="aMUX.AddOpera"
+    x:Class="aMUX.AddPhoto"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -11,7 +11,7 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d" d:DesignHeight="696" d:DesignWidth="480"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -22,45 +22,30 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="{Binding Path=LangsRes.AppName, Source={ StaticResource LangsManager }}" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="{Binding Path=LangsRes.lblOperaPage, Source={ StaticResource LangsManager }}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-
+            <TextBlock x:Name="ApplicationTitle" Text="{Binding Path=LangsRes.AppName, Source= {StaticResource LangsManager}}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="{Binding Path=LangsRes.btnAddPhoto, Source= {StaticResource LangsManager}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0">
-                        <TextBlock Text="{Binding Path=LangsRes.lblOperaPrev, Source={StaticResource LangsManager}}" FontSize="26"></TextBlock>
-                        <TextBox x:Name="qrTxtCode" Height="200" IsReadOnly="True"></TextBox>
-                    </StackPanel>
-                    <StackPanel Grid.Column="1" x:Name="photoStackPan" Visibility="Collapsed">
-                        <TextBlock FontSize="26" Text="{Binding Path=LangsRes.lblPhotoPrev, Source={StaticResource LangsManager}}"></TextBlock>
-                        <Image x:Name="picPrevBox" Width="200" Height="200"></Image>
-                    </StackPanel>
-                </Grid>
-
-                <StackPanel x:Name="commentStackPan" Visibility="Collapsed">
-                    <TextBlock FontSize="26" Text="{Binding Path=LangsRes.lblCommentPrev, Source={StaticResource LangsManager}}"></TextBlock>
-                    <ScrollViewer>
-                        <TextBlock TextWrapping="Wrap" x:Name="textPrevBox"></TextBlock>
-                    </ScrollViewer>
-                </StackPanel>
+                <Image HorizontalAlignment="Center" x:Name="imgBox" Stretch="Fill" VerticalAlignment="Top" Height="337" Width="450" />
+            </StackPanel>
+            <StackPanel x:Name="commentStackPan" Visibility="Collapsed">
+                <TextBlock FontSize="26" Text="{Binding Path=LangsRes.lblCommentPrev, Source={StaticResource LangsManager}}"></TextBlock>
+                <ScrollViewer>
+                    <TextBlock TextWrapping="Wrap" x:Name="textPrevBox"></TextBlock>
+                </ScrollViewer>
             </StackPanel>
         </Grid>
     </Grid>
-
-    <!--Sample code showing usage of ApplicationBar-->
+ 
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
             <shell:ApplicationBarIconButton Click="addPhotoBtn_Click" x:Name="addPhotoBtn" IconUri="/Images/appbar.feature.camera.rest.png" Text="Add Photo"/>
             <shell:ApplicationBarIconButton Click="addCommentBtn_Click" x:Name="addCommentBtn" IconUri="/Images/appbar.edit.rest.png" Text="Add Comment"/>
             <shell:ApplicationBarIconButton Click="confirmBtn_Click" x:Name="confirmBtn" IconUri="/Images/appbar.check.rest.png" Text="Add Comment"/>
+
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 

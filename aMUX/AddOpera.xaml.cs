@@ -21,16 +21,19 @@ using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
 using Coding4Fun.Toolkit.Controls;
 using System.Windows.Media.Imaging;
+using aMUXClasses;
 
 namespace aMUX
 {
   public partial class AddOpera : PhoneApplicationPage
   {
     string operaQR;
+    string photoB64;
 
     public AddOpera()
     {
       InitializeComponent();
+      photoB64 = "";
       operaQR = PhoneApplicationService.Current.State["OperaQR"] as string;
       PhoneApplicationService.Current.State["OperaQR"] = null;
       qrTxtCode.Text = operaQR;
@@ -64,12 +67,22 @@ namespace aMUX
         BitmapImage bImg = new BitmapImage();
         bImg.SetSource(e.ChosenPhoto);
         picPrevBox.Source = bImg;
+
+        byte[] b = new byte[e.ChosenPhoto.Length];
+        e.ChosenPhoto.Position = 0;
+        e.ChosenPhoto.Read(b, 0, b.Length);
+
+        //Saves the picture in base64 (See implementation comments)
+        //CommonTasks.SavePicture(picName, Convert.ToBase64String(b));
+        photoB64 = Convert.ToBase64String(b);
       }
     }
 
     private void addCommentBtn_Click(object sender, EventArgs e)
     {
       InputPrompt ip = new InputPrompt();
+      ip.Title = Languages.LangsRes.lblComment;
+
       ip.Completed += new EventHandler<PopUpEventArgs<string, PopUpResult>>(ip_Completed);
       ip.Show();
 
@@ -83,7 +96,13 @@ namespace aMUX
         textPrevBox.Text = e.Result;
         commentStackPan.Visibility = System.Windows.Visibility.Visible;
       }
+    }
 
+
+    private void confirmBtn_Click(object sender, EventArgs e)
+    {
+      PhoneApplicationService.Current.State["NewItem"] = new Scan(operaQR, textPrevBox.Text, photoB64); 
+      NavigationService.Navigate(new Uri("/MainPage.xaml?action=NewItem", UriKind.Relative));
     }
   }
 }

@@ -115,11 +115,29 @@ namespace aMUX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        public static string btnCong {
+            get {
+                return ResourceManager.GetString("btnCong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Retake.
         /// </summary>
         public static string btnRetake {
             get {
                 return ResourceManager.GetString("btnRetake", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter your comment below:.
+        /// </summary>
+        public static string lblComment {
+            get {
+                return ResourceManager.GetString("lblComment", resourceCulture);
             }
         }
         

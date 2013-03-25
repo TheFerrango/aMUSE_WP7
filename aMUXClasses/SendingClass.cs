@@ -17,6 +17,12 @@ namespace aMUXClasses
     List<Personal> _exp;
     string _email, _confirm;
 
+    public SendingClass()
+    {
+      _exp = new List<Personal>();
+      _email = ""; _confirm = "";
+    }
+
     public List<Personal> exp
     {
       get { return _exp; }

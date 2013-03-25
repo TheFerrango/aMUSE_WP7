@@ -376,8 +376,10 @@
     </controls:Panorama>
   </Grid>
   <phone:PhoneApplicationPage.ApplicationBar>
-    <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-      <shell:ApplicationBarIconButton IconUri="/Images/appbar.check.rest.png" Click="btnSend_Click" x:Name="btnSend" Text="Send"/>      
-    </shell:ApplicationBar>
+    <shell:ApplicationBar IsVisible="True" Mode="Minimized" IsMenuEnabled="True">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Click="btnSend_Click" x:Name="btnSend" Text="Send"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
   </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>

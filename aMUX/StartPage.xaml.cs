@@ -52,15 +52,15 @@ namespace aMUX
       IsolatedStorageSettings iss = IsolatedStorageSettings.ApplicationSettings;
 
 #if DEBUG
+      iss["emailAddress"] = "bill@contoso.com";      
       NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
-      iss["emailAddress"] = "bill@contoso.com";
 
 #endif
 
       if (isValid)
       {
+        iss["emailAddress"] = txtBxEmail.Text;       
         NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
-        iss["emailAddress"] = txtBxEmail.Text;
       }
     }
   }

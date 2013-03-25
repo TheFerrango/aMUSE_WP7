@@ -135,8 +135,14 @@
   <data name="btnConfMailOK" xml:space="preserve">
     <value>Let's begin!</value>
   </data>
+  <data name="btnCong" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
   <data name="btnRetake" xml:space="preserve">
     <value>Retake</value>
+  </data>
+  <data name="lblComment" xml:space="preserve">
+    <value>Enter your comment below:</value>
   </data>
   <data name="lblCommentPrev" xml:space="preserve">
     <value>Custom comment:</value>
