@@ -1,22 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using Microsoft.Phone.Controls;
-using System.Collections.ObjectModel;
-using com.google.zxing.qrcode;
-using Microsoft.Devices;
-using com.google.zxing.common;
-using com.google.zxing;
 using System.Windows.Navigation;
 using System.Windows.Threading;
+using com.google.zxing;
+using com.google.zxing.common;
+using com.google.zxing.qrcode;
+using Microsoft.Devices;
+using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
 namespace aMUX
@@ -37,6 +28,12 @@ namespace aMUX
       _timer = new DispatcherTimer();
       _timer.Interval = TimeSpan.FromMilliseconds(250);
       _timer.Tick += (o, arg) => ScanPreviewBuffer();
+
+#if DEBUG
+      btnAccept.IsEnabled = true;
+      operaQR = "DebugOverride";
+#endif
+
     }
 
 
@@ -93,6 +90,7 @@ namespace aMUX
 
     private void btnAccept_Click(object sender, RoutedEventArgs e)
     {
+      _timer.Stop();
       PhoneApplicationService.Current.State["OperaQR"] = operaQR;
       NavigationService.Navigate(new Uri("/AddOpera.xaml", UriKind.Relative));
     }

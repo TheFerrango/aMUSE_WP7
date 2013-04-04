@@ -20,6 +20,7 @@ namespace aMUX
 {
   public partial class AddPhoto : PhoneApplicationPage
   {
+    InputPrompt ip;
     PhotoChooserTask pct;
     string photoB64;
 
@@ -48,7 +49,7 @@ namespace aMUX
 
     private void addCommentBtn_Click(object sender, EventArgs e)
     {
-      InputPrompt ip = new InputPrompt();
+      ip = new InputPrompt();
       ip.Title = Languages.LangsRes.lblComment;
 
       ip.Completed += new EventHandler<PopUpEventArgs<string, PopUpResult>>(ip_Completed);
