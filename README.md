@@ -2,8 +2,8 @@ aMUX: a MUseum eXperience
 Windows Phone 7.5 official client
 <pre>
  _______________________
-< Inferior museums will > 
-<   be EXTERMINATED!!   >
+| Inferior museums will | 
+|   be EXTERMINATED!!   |
  -----------------------
         \
          \
