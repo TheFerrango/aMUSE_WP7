@@ -99,5 +99,17 @@ namespace aMUX
       App.ViewModel.Items.Clear();
       NavigationService.Navigate(new Uri("/StartPage.xaml", UriKind.Relative));
     }
+
+    private void btnAbo_Click(object sender, EventArgs e)
+    {
+      NavigationService.Navigate(new Uri("/AboPage.xaml", UriKind.Relative));
+    }
+
+    private void mnItmRem_Click(object sender, RoutedEventArgs e)
+    {
+      ItemViewModel toRemove = (sender as MenuItem).DataContext as ItemViewModel;
+      App.ViewModel.Items.Remove(toRemove);
+      
+    }
   }
 }

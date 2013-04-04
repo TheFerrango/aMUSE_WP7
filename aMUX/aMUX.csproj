@@ -72,6 +72,9 @@
     <Reference Include="mscorlib.extensions" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboPage.xaml.cs">
+      <DependentUpon>AboPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddPhoto.xaml.cs">
       <DependentUpon>AddPhoto.xaml</DependentUpon>
     </Compile>
@@ -107,6 +110,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="AboPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddPhoto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -154,6 +161,7 @@
     <Content Include="Images\Comment.png" />
     <Content Include="Images\Photo.png" />
     <Resource Include="Images\Text.png" />
+    <Resource Include="Images\uruyat.jpg" />
     <Content Include="README_FIRST.txt" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>

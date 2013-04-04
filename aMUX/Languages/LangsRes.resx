@@ -141,6 +141,9 @@
   <data name="btnRetake" xml:space="preserve">
     <value>Retake</value>
   </data>
+  <data name="lblAboPage" xml:space="preserve">
+    <value>About aMUX</value>
+  </data>
   <data name="lblComment" xml:space="preserve">
     <value>Enter your comment below:</value>
   </data>

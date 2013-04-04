@@ -133,6 +133,15 @@ namespace aMUX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About aMUX.
+        /// </summary>
+        public static string lblAboPage {
+            get {
+                return ResourceManager.GetString("lblAboPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter your comment below:.
         /// </summary>
         public static string lblComment {

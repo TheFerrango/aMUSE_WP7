@@ -81,6 +81,7 @@ namespace aMUX
     {
       if (operaQR == "")
       {
+        _timer.Stop();
         operaQR =  text;
         _previewRect.Stroke = new SolidColorBrush(Color.FromArgb(255, 0, 100, 0));
         btnAccept.IsEnabled = true;
@@ -90,7 +91,6 @@ namespace aMUX
 
     private void btnAccept_Click(object sender, RoutedEventArgs e)
     {
-      _timer.Stop();
       PhoneApplicationService.Current.State["OperaQR"] = operaQR;
       NavigationService.Navigate(new Uri("/AddOpera.xaml", UriKind.Relative));
     }
@@ -99,7 +99,7 @@ namespace aMUX
     {
       btnAccept.IsEnabled = false;
       btnRefuse.IsEnabled = false;
-
+      _timer.Start();
       operaQR = "";
     }
 
