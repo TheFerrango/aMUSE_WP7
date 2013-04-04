@@ -91,6 +91,10 @@ namespace aMUX
 
     private void btnAccept_Click(object sender, RoutedEventArgs e)
     {
+#if DEBUG
+      _timer.Stop();
+#endif
+
       PhoneApplicationService.Current.State["OperaQR"] = operaQR;
       NavigationService.Navigate(new Uri("/AddOpera.xaml", UriKind.Relative));
     }
