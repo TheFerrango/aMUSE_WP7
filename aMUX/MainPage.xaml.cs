@@ -94,7 +94,7 @@ namespace aMUX
       foreach(ItemViewModel ivm in App.ViewModel.Items)
         ss.exp.Add(ivm.ActualContent);
       ss.email = iss["emailAddress"] as string;
-      ss.confirm = "bambaQR";
+      ss.confirm = "24e3261d7bbe24664c1babc75189cfebec04498b";
       new Networking().SendaSenda(ss);
       App.ViewModel.Items.Clear();
       NavigationService.Navigate(new Uri("/StartPage.xaml", UriKind.Relative));

@@ -59,7 +59,8 @@ namespace aMUX
 
       if (isValid)
       {
-        iss["emailAddress"] = txtBxEmail.Text;       
+        iss["emailAddress"] = txtBxEmail.Text;
+        App.NetMan = new Zel10Support.Zel10Net();
         NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
       }
     }

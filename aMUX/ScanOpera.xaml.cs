@@ -30,8 +30,8 @@ namespace aMUX
       _timer.Tick += (o, arg) => ScanPreviewBuffer();
 
 #if DEBUG
-      btnAccept.IsEnabled = true;
-      operaQR = "DebugOverride";
+     /* btnAccept.IsEnabled = true;
+      operaQR = "DebugOverride";*/
 #endif
 
     }
@@ -91,9 +91,7 @@ namespace aMUX
 
     private void btnAccept_Click(object sender, RoutedEventArgs e)
     {
-#if DEBUG
-      _timer.Stop();
-#endif
+     _timer.Stop();
 
       PhoneApplicationService.Current.State["OperaQR"] = operaQR;
       NavigationService.Navigate(new Uri("/AddOpera.xaml", UriKind.Relative));

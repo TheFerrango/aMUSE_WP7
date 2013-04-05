@@ -6,11 +6,14 @@ using Coding4Fun.Toolkit.Controls;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
+using System.Windows;
 
 namespace aMUX
 {
   public partial class AddOpera : PhoneApplicationPage
   {
+    Zel10Support.Zel10Net NetMan;
+
     string operaQR;
     string photoB64;
     InputPrompt ip;
@@ -19,10 +22,27 @@ namespace aMUX
     {
       InitializeComponent();
       photoB64 = "";
+      NetMan = new Zel10Support.Zel10Net();
+      NetMan.BatchOperationCompleted += new Zel10Support.Zel10Net.BatchOperationCompletedHandler(NetMan_BatchOperationCompleted);
       operaQR = PhoneApplicationService.Current.State["OperaQR"] as string;
       PhoneApplicationService.Current.State.Clear();
-      qrTxtCode.Text = operaQR;
+      //qrTxtCode.Text = operaQR;
+
+      
+
       //NavigationService.RemoveBackEntry();
+    }
+
+    void NetMan_BatchOperationCompleted(object sender, System.Collections.Generic.List<string> results)
+    {
+      LoadBar.IsIndeterminate = false;
+      //MessageBox.Show(results[0]);
+
+      //check ifs
+      ItemInfos itemInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<ItemInfos>(results[0]);
+      operaQR = itemInfo.id;
+      operaPicBox.Source = new BitmapImage(Zel10Support.NetworkAddresses.ObtainItemPicture(itemInfo.photo));
+
     }
 
     public void LocalizeAppBar()
@@ -40,9 +60,10 @@ namespace aMUX
 
     private void addPhotoBtn_Click(object sender, EventArgs e)
     {
-      PhotoChooserTask pct = new PhotoChooserTask() { ShowCamera = true, PixelHeight = 480, PixelWidth=640 };
-      pct.Completed += new EventHandler<PhotoResult>(pct_Completed);
-      pct.Show();
+      
+
+
+
     }
 
     void pct_Completed(object sender, PhotoResult e)
@@ -66,21 +87,17 @@ namespace aMUX
 
     private void addCommentBtn_Click(object sender, EventArgs e)
     {
-       ip = new InputPrompt();
-      ip.Title = Languages.LangsRes.lblComment;
-
-      ip.Completed += new EventHandler<PopUpEventArgs<string, PopUpResult>>(ip_Completed);
-      ip.Show();
+      
 
     }
 
     void ip_Completed(object sender, PopUpEventArgs<string, PopUpResult> e)
     {
-
       if (e.PopUpResult == PopUpResult.Ok)
       {
+        imgAddComm.Visibility = System.Windows.Visibility.Collapsed;
+
         textPrevBox.Text = e.Result;
-        commentStackPan.Visibility = System.Windows.Visibility.Visible;
       }
     }
 
@@ -89,6 +106,30 @@ namespace aMUX
     {
       PhoneApplicationService.Current.State["NewItem"] = new Scan(operaQR, textPrevBox.Text, photoB64); 
       NavigationService.Navigate(new Uri("/MainPage.xaml?action=NewItem", UriKind.Relative));
+    }
+
+    private void ScrollViewer_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+    {
+      ip = new InputPrompt();
+      ip.Title = Languages.LangsRes.lblComment;
+      ip.Value = textPrevBox.Text;
+      ip.Completed += new EventHandler<PopUpEventArgs<string, PopUpResult>>(ip_Completed);
+      ip.Show();
+    }
+
+    private void PhoneApplicationPage_Loaded(object sender, System.Windows.RoutedEventArgs e)
+    {
+      LoadBar.IsIndeterminate = true;
+      NetMan.AddNetJob(new Zel10Support.GetItemInformation(operaQR));
+      NetMan.Execute();
+      operaPicBox.Source = new BitmapImage(new Uri("http://www.independent.co.uk/incoming/article8389795.ece/ALTERNATES/w460/BerlusconiGET.jpg"));
+    }
+
+    private void picPrevBox_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+    {
+      PhotoChooserTask pct = new PhotoChooserTask() { ShowCamera = true, PixelHeight = 480, PixelWidth = 640 };
+      pct.Completed += new EventHandler<PhotoResult>(pct_Completed);
+      pct.Show();
     }
   }
 }

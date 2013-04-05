@@ -24,9 +24,11 @@ namespace aMUX
 
     public void SendaSenda(SendingClass ss)
     {
-      wc = new WebClient();
-      wc.Headers["Content-Type"] = "application/json";
+      Zel10Support.Zel10Net z10n = new Zel10Support.Zel10Net();
       string jsonFinale = JsonConvert.SerializeObject(ss, Formatting.None);
+      z10n.AddNetJob(new Zel10Support.ContentUpload(jsonFinale));
+      z10n.Execute();
+
       //wc.UploadStringAsync(new Uri(""), jsonFinale);
     }
   }

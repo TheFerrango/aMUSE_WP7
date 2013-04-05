@@ -82,9 +82,9 @@ namespace SendServer
       backgroundWorker1.ReportProgress(Convert.ToInt32((3.0 / 11) * 100));
       string foto_conv = Convert.ToBase64String(File.ReadAllBytes("Images/testImg.jpg"));
       backgroundWorker1.ReportProgress(Convert.ToInt32((4.0 / 11) * 100));
-      lp.Add(new Scan("55", "woow"));
+      lp.Add(new Scan("1", "woow"));
       backgroundWorker1.ReportProgress(Convert.ToInt32((5.0 / 11) * 100));
-      lp.Add(new Scan("42"));
+      lp.Add(new Scan("2"));
       backgroundWorker1.ReportProgress(Convert.ToInt32((6.0 / 11) * 100));
       lp.Add(new Personal("vermi!", foto_conv));
       backgroundWorker1.ReportProgress(Convert.ToInt32((7.0 / 11) * 100));

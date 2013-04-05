@@ -35,6 +35,14 @@ namespace aMUX
       }
     }
 
+    private static Zel10Support.Zel10Net netMan = null;
+
+    public static Zel10Support.Zel10Net NetMan
+    {
+      get { return App.netMan; }
+      set { App.netMan = value; }
+    }
+
     /// <summary>
     /// Provides easy access to the root frame of the Phone Application.
     /// </summary>
