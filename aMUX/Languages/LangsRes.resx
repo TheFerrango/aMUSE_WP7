@@ -168,4 +168,10 @@
   <data name="msgNotImpl" xml:space="preserve">
     <value>Nah, sorry, feature not implemented.</value>
   </data>
+  <data name="pvtData" xml:space="preserve">
+    <value>About the opera</value>
+  </data>
+  <data name="pvtPic" xml:space="preserve">
+    <value>Picture</value>
+  </data>
 </root>

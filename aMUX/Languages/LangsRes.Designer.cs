@@ -212,5 +212,23 @@ namespace aMUX.Languages {
                 return ResourceManager.GetString("msgNotImpl", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About the opera.
+        /// </summary>
+        public static string pvtData {
+            get {
+                return ResourceManager.GetString("pvtData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Picture.
+        /// </summary>
+        public static string pvtPic {
+            get {
+                return ResourceManager.GetString("pvtPic", resourceCulture);
+            }
+        }
     }
 }

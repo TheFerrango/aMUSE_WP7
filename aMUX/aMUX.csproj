@@ -81,7 +81,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ItemInfos.cs" />
     <Compile Include="LangsManager.cs" />
     <Compile Include="Languages\LangsRes.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -97,8 +96,8 @@
     <Compile Include="Networking.cs" />
     <Compile Include="Network\NetSupComponents.cs" />
     <Compile Include="Network\Zel10Net.cs" />
-    <Compile Include="OperaInfoView.xaml.cs">
-      <DependentUpon>OperaInfoView.xaml</DependentUpon>
+    <Compile Include="OperaViewPage.xaml.cs">
+      <DependentUpon>OperaViewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PhotoCameraLuminanceSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,7 +131,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="OperaInfoView.xaml">
+    <Page Include="OperaViewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
