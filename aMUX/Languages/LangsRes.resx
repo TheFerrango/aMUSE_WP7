@@ -168,6 +168,18 @@
   <data name="msgNotImpl" xml:space="preserve">
     <value>Nah, sorry, feature not implemented.</value>
   </data>
+  <data name="ovpAuth" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="ovpDesc" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ovpRelDate" xml:space="preserve">
+    <value>Release date</value>
+  </data>
+  <data name="ovpTitle" xml:space="preserve">
+    <value>Title</value>
+  </data>
   <data name="pvtData" xml:space="preserve">
     <value>About the opera</value>
   </data>

@@ -34,7 +34,7 @@
                         <ListBox x:Name="listAbout">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock FontSize="20"></TextBlock>
+                                    <TextBlock Text="{Binding}" TextWrapping="Wrap" FontSize="28"></TextBlock>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                             

@@ -11,6 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using aMUXClasses;
+using Microsoft.Phone.Shell;
 
 namespace aMUX
 {
@@ -21,17 +22,17 @@ namespace aMUX
     public OperaViewPage()
     {
       InitializeComponent();
-      iis = new ItemInfos() { author = "Blk", description="The greatest bongo ever", release_date="28/10/1971", title="BonGold" };
+      iis = PhoneApplicationService.Current.State["ItemInfo"] as ItemInfos;
+      PhoneApplicationService.Current.State.Clear();
     }
 
     private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
     {
       //TODO: add image loading
-
-      listAbout.Items.Add(iis.title);
-      listAbout.Items.Add(iis.release_date);
-      listAbout.Items.Add(iis.author);
-      listAbout.Items.Add(iis.description);
+      listAbout.Items.Add(string.Format("{0}: {1}", Languages.LangsRes.ovpTitle, iis.title));
+      listAbout.Items.Add(string.Format("{0}: {1}", Languages.LangsRes.pvtData, iis.release_date));
+      listAbout.Items.Add(string.Format("{0}: {1}", Languages.LangsRes.ovpAuth, iis.author));
+      listAbout.Items.Add(string.Format("{0}: {1}", Languages.LangsRes.ovpDesc, iis.description));
     }
 
     

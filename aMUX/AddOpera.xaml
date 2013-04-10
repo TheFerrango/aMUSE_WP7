@@ -38,7 +38,7 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0">
                         <TextBlock Text="{Binding Path=LangsRes.lblOperaPrev, Source={StaticResource LangsManager}}" FontSize="26"></TextBlock>
-                        <Image x:Name="operaPicBox" Height="200" Width="200" Source="Images/Download.png" >
+                        <Image x:Name="operaPicBox" Tap="operaPicBox_Tap" Height="200" Width="200" Source="Images/Download.png" >
                             
                         </Image>
                     </StackPanel>

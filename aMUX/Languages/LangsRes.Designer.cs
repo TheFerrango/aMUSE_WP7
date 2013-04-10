@@ -214,6 +214,42 @@ namespace aMUX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Author.
+        /// </summary>
+        public static string ovpAuth {
+            get {
+                return ResourceManager.GetString("ovpAuth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string ovpDesc {
+            get {
+                return ResourceManager.GetString("ovpDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Release date.
+        /// </summary>
+        public static string ovpRelDate {
+            get {
+                return ResourceManager.GetString("ovpRelDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string ovpTitle {
+            get {
+                return ResourceManager.GetString("ovpTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About the opera.
         /// </summary>
         public static string pvtData {
