@@ -294,10 +294,10 @@
 
     <!--Panorama control-->
     <controls:Panorama x:Name="bigPanorama">
-            <controls:Panorama.Background>
-                <ImageBrush ImageSource="/aMUX;component/PanoramaBackground.png" />
-            </controls:Panorama.Background>
-            <controls:Panorama.Title >
+      <controls:Panorama.Background>
+        <ImageBrush ImageSource="/aMUX;component/PanoramaBackground.png" />
+      </controls:Panorama.Background>
+      <controls:Panorama.Title >
         <Grid Height="200">
           <TextBlock Margin="0,30,0,0" Text="aMUX" FontSize="150"/>
         </Grid>
@@ -352,7 +352,7 @@
         HorizontalAlignment="Left" 
         Style="{StaticResource kleinone}"
                            
-          />          
+          />
         </Grid>
       </controls:PanoramaItem>
 
@@ -364,11 +364,11 @@
           <ListBox.ItemTemplate>
             <DataTemplate>
               <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
-                                <toolkit:ContextMenuService.ContextMenu>
-                                    <toolkit:ContextMenu>
-                                        <toolkit:MenuItem x:Name="mnItmRem" Click="mnItmRem_Click" Header="Exterminate"/>
-                                    </toolkit:ContextMenu>
-                                </toolkit:ContextMenuService.ContextMenu>
+                <toolkit:ContextMenuService.ContextMenu>
+                  <toolkit:ContextMenu>
+                    <toolkit:MenuItem x:Name="mnItmRem" Click="mnItmRem_Click" Header="Exterminate"/>
+                  </toolkit:ContextMenu>
+                </toolkit:ContextMenuService.ContextMenu>
 
                 <Image Margin="12,0,9,0" Height="100" Width="100" Source="{Binding ContentImage}"></Image>
                 <StackPanel Width="311">
@@ -376,21 +376,21 @@
                   <TextBlock Text="{Binding WhatContains}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
                 </StackPanel>
               </StackPanel>
-                
-                        </DataTemplate>
-              
+
+            </DataTemplate>
+
           </ListBox.ItemTemplate>
-                    
-                </ListBox>
+
+        </ListBox>
       </controls:PanoramaItem>
     </controls:Panorama>
   </Grid>
   <phone:PhoneApplicationPage.ApplicationBar>
     <shell:ApplicationBar IsVisible="True" Mode="Minimized" IsMenuEnabled="True">
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Click="btnSend_Click" x:Name="btnSend" Text="Submit experience"/>
-                <shell:ApplicationBarMenuItem Click="btnAbo_Click" x:Name="btnAbo" Text="About Application"/>
-            </shell:ApplicationBar.MenuItems>
-        </shell:ApplicationBar>
+      <shell:ApplicationBar.MenuItems>
+        <shell:ApplicationBarMenuItem Click="btnSend_Click" x:Name="btnSend" Text="Submit experience"/>
+        <shell:ApplicationBarMenuItem Click="btnAbo_Click" x:Name="btnAbo" Text="About Application"/>
+      </shell:ApplicationBar.MenuItems>
+    </shell:ApplicationBar>
   </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>

@@ -7,16 +7,16 @@
     xmlns:local="clr-namespace:aMUX"
     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-    <!--Application Resources-->
-    <Application.Resources>
-        <local:LangsManager x:Key="LangsManager" />
-    </Application.Resources>
+  <!--Application Resources-->
+  <Application.Resources>
+    <local:LangsManager x:Key="LangsManager" />
+  </Application.Resources>
 
-    <Application.ApplicationLifetimeObjects>
-        <!--Required object that handles lifetime events for the application-->
-        <shell:PhoneApplicationService 
+  <Application.ApplicationLifetimeObjects>
+    <!--Required object that handles lifetime events for the application-->
+    <shell:PhoneApplicationService 
             Launching="Application_Launching" Closing="Application_Closing" 
             Activated="Application_Activated" Deactivated="Application_Deactivated"/>
-    </Application.ApplicationLifetimeObjects>
+  </Application.ApplicationLifetimeObjects>
 
 </Application>

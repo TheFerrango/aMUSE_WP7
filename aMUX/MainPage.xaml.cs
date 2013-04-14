@@ -1,27 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using Microsoft.Phone.Controls;
-using Coding4Fun.Toolkit.Controls;
-using Microsoft.Phone.Shell;
-using aMUXClasses;
 using System.IO.IsolatedStorage;
+using System.Windows;
+using aMUXClasses;
+using Coding4Fun.Toolkit.Controls;
+using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
+using Newtonsoft.Json;
+using Zel10Support;
 
 namespace aMUX
 {
   public partial class MainPage : PhoneApplicationPage
   {
-
     IsolatedStorageSettings iss;
-
 
     // Constructor
     public MainPage()
@@ -31,7 +22,6 @@ namespace aMUX
       // Set the data context of the listbox control to the sample data
       DataContext = App.ViewModel;
       this.Loaded += new RoutedEventHandler(MainPage_Loaded);
-      
     }
 
     // Load data for the ViewModel Items
@@ -48,7 +38,7 @@ namespace aMUX
         string modello = "Personal";
         if (item is aMUXClasses.Scan)
           modello = "Scan";
-        App.ViewModel.Items.Add(new ItemViewModel() { ActualContent=item, OperaName = modello });
+        App.ViewModel.Items.Add(new ItemViewModel() { ActualContent = item, OperaName = modello });
         PhoneApplicationService.Current.State.Clear();
       }
 
@@ -59,8 +49,6 @@ namespace aMUX
     private void btnRead_Tap(object sender, System.Windows.Input.GestureEventArgs e)
     {
       NavigationService.Navigate(new Uri("/ScanOpera.xaml", UriKind.Relative));
-
-
     }
 
     private void btnPhoto_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -75,28 +63,28 @@ namespace aMUX
       ip.Title = Languages.LangsRes.lblComment;
       ip.Completed += new EventHandler<PopUpEventArgs<string, PopUpResult>>(ip_Completed);
       ip.Show();
-
     }
 
     void ip_Completed(object sender, PopUpEventArgs<string, PopUpResult> e)
     {
-
       if (e.PopUpResult == PopUpResult.Ok)
       {
-        App.ViewModel.Items.Add(new ItemViewModel() { OperaName = "Comment", ActualContent = new aMUXClasses.Personal(e.Result) });        
+        App.ViewModel.Items.Add(new ItemViewModel() { OperaName = "Comment", ActualContent = new aMUXClasses.Personal(e.Result) });
       }
-
     }
 
     private void btnSend_Click(object sender, EventArgs e)
     {
       //MessageBox.Show(Languages.LangsRes.msgNotImpl);
       SendingClass ss = new SendingClass();
-      foreach(ItemViewModel ivm in App.ViewModel.Items)
+      foreach (ItemViewModel ivm in App.ViewModel.Items)
         ss.exp.Add(ivm.ActualContent);
       ss.email = iss["emailAddress"] as string;
       ss.confirm = "24e3261d7bbe24664c1babc75189cfebec04498b";
-      new Networking().SendaSenda(ss);
+      Zel10Net z10n = new Zel10Support.Zel10Net();
+      string jsonFinale = JsonConvert.SerializeObject(ss, Formatting.None);
+      z10n.AddNetJob(new Zel10Support.ContentUpload(jsonFinale));
+      z10n.Execute();
       App.ViewModel.Items.Clear();
       NavigationService.Navigate(new Uri("/StartPage.xaml", UriKind.Relative));
     }
@@ -110,7 +98,6 @@ namespace aMUX
     {
       ItemViewModel toRemove = (sender as MenuItem).DataContext as ItemViewModel;
       App.ViewModel.Items.Remove(toRemove);
-      
     }
   }
 }

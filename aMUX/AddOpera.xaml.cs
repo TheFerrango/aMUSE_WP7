@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using aMUXClasses;
@@ -6,7 +7,6 @@ using Coding4Fun.Toolkit.Controls;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
-using System.Windows;
 using Zel10Support;
 
 namespace aMUX
@@ -29,7 +29,7 @@ namespace aMUX
       NetMan = new Zel10Net();
       NetMan.BatchOperationCompleted += new Zel10Net.BatchOperationCompletedHandler(NetMan_BatchOperationCompleted);
       operaQR = PhoneApplicationService.Current.State["OperaQR"] as string;
-      PhoneApplicationService.Current.State.Clear();     
+      PhoneApplicationService.Current.State.Clear();
     }
 
     #endregion
@@ -47,9 +47,16 @@ namespace aMUX
     void NetMan_BatchOperationCompleted(object sender, System.Collections.Generic.List<string> results)
     {
       LoadBar.IsIndeterminate = false;
-      itemInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<ItemInfos>(results[0]);
-      operaQR = itemInfo.id;
-      operaPicBox.Source = new BitmapImage(NetworkAddresses.ObtainItemPicture(itemInfo.photo));
+      if (results[0] != "FAIL")
+      {
+        itemInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<ItemInfos>(results[0]);
+        operaQR = itemInfo.id;
+        operaPicBox.Source = new BitmapImage(NetworkAddresses.ObtainItemPicture(itemInfo.photo));
+      }
+      else
+      {
+        MessageBox.Show(Languages.LangsRes.ErrorFailRetrieve, Languages.LangsRes.ErrorTit, MessageBoxButton.OK);
+      }
     }
 
     #endregion
@@ -117,6 +124,8 @@ namespace aMUX
         //new ItemInfos() { author = "Blk", description = "The greatest bongo ever", release_date = "28/10/1971", title = "BonGold" };
         NavigationService.Navigate(new Uri("/OperaViewPage.xaml", UriKind.Relative));
       }
+      else
+        MessageBox.Show(Languages.LangsRes.noOperaData, Languages.LangsRes.ErrorTit, MessageBoxButton.OK);
     }
 
 

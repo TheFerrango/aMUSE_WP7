@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using System.Collections.Generic;
+using System.Net;
 
 namespace Zel10Support
 {
@@ -43,7 +35,7 @@ namespace Zel10Support
       _zel10Client.UploadStringCompleted += new UploadStringCompletedEventHandler(_zel10Client_UploadStringCompleted);
       _zel10Client.DownloadStringCompleted += new DownloadStringCompletedEventHandler(_zel10Client_DownloadStringCompleted);
     }
-    
+
     void _zel10Client_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
     {
       try
@@ -59,8 +51,10 @@ namespace Zel10Support
           BatchOperationCompleted(sender, _results);
         }
       }
-      catch { _results.Add("FAIL");
-      BatchOperationCompleted(sender, _results);
+      catch
+      {
+        _results.Add("FAIL");
+        BatchOperationCompleted(sender, _results);
       }
     }
 
@@ -70,8 +64,10 @@ namespace Zel10Support
       {
         _results.Add(e.Result);
       }
-      catch { _results.Add("FAIL");
-      BatchOperationCompleted(sender, _results);
+      catch
+      {
+        _results.Add("FAIL");
+        BatchOperationCompleted(sender, _results);
       }
       if (_jobs.Count > 0)
       {
@@ -144,7 +140,7 @@ namespace Zel10Support
 
     public void ExecuteJob(CookieAwareWebClient cawc, string address)
     {
-      MessageBox.Show(NetworkAddresses.ObtainItemInfoAddress(itemQR));
+      //MessageBox.Show(NetworkAddresses.ObtainItemInfoAddress(itemQR));
       cawc.DownloadStringAsync(new Uri(NetworkAddresses.ObtainItemInfoAddress(itemQR), UriKind.Absolute));
     }
   }

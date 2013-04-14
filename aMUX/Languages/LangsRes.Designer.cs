@@ -133,6 +133,24 @@ namespace aMUX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to fetch valid data. Please check your connection and try again..
+        /// </summary>
+        public static string ErrorFailRetrieve {
+            get {
+                return ResourceManager.GetString("ErrorFailRetrieve", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string ErrorTit {
+            get {
+                return ResourceManager.GetString("ErrorTit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About aMUX.
         /// </summary>
         public static string lblAboPage {
@@ -210,6 +228,15 @@ namespace aMUX.Languages {
         public static string msgNotImpl {
             get {
                 return ResourceManager.GetString("msgNotImpl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Still loading data or no data available on the opera.
+        /// </summary>
+        public static string noOperaData {
+            get {
+                return ResourceManager.GetString("noOperaData", resourceCulture);
             }
         }
         

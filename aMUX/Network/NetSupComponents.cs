@@ -9,7 +9,7 @@ namespace Zel10Support
   {
     void ExecuteJob(CookieAwareWebClient cawc, string address);
   }
-  
+
   public static class NetworkAddresses
   {
     //static string _ServerAddress = "http://panizza1.dyndns.org:2401/";

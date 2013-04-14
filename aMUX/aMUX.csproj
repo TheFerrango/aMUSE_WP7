@@ -93,7 +93,6 @@
     <Compile Include="AddOpera.xaml.cs">
       <DependentUpon>AddOpera.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Networking.cs" />
     <Compile Include="Network\NetSupComponents.cs" />
     <Compile Include="Network\Zel10Net.cs" />
     <Compile Include="OperaViewPage.xaml.cs">

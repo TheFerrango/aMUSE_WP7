@@ -141,6 +141,12 @@
   <data name="btnRetake" xml:space="preserve">
     <value>Retake</value>
   </data>
+  <data name="ErrorFailRetrieve" xml:space="preserve">
+    <value>Unable to fetch valid data. Please check your connection and try again.</value>
+  </data>
+  <data name="ErrorTit" xml:space="preserve">
+    <value>Error</value>
+  </data>
   <data name="lblAboPage" xml:space="preserve">
     <value>About aMUX</value>
   </data>
@@ -167,6 +173,9 @@
   </data>
   <data name="msgNotImpl" xml:space="preserve">
     <value>Nah, sorry, feature not implemented.</value>
+  </data>
+  <data name="noOperaData" xml:space="preserve">
+    <value>Still loading data or no data available on the opera</value>
   </data>
   <data name="ovpAuth" xml:space="preserve">
     <value>Author</value>

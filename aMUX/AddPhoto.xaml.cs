@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using Microsoft.Phone.Controls;
-using Coding4Fun.Toolkit.Controls;
-using Microsoft.Phone.Tasks;
 using System.Windows.Media.Imaging;
 using aMUXClasses;
+using Coding4Fun.Toolkit.Controls;
+using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
 
 namespace aMUX
 {
@@ -47,27 +38,13 @@ namespace aMUX
       }
     }
 
-    private void addCommentBtn_Click(object sender, EventArgs e)
-    {
-      ip = new InputPrompt();
-      ip.Title = Languages.LangsRes.lblComment;
-
-      ip.Completed += new EventHandler<PopUpEventArgs<string, PopUpResult>>(ip_Completed);
-      ip.Show();
-    }
-
     void ip_Completed(object sender, PopUpEventArgs<string, PopUpResult> e)
     {
       if (e.PopUpResult == PopUpResult.Ok)
       {
+        imgAddComm.Visibility = System.Windows.Visibility.Collapsed;
         textPrevBox.Text = e.Result;
-        commentStackPan.Visibility = System.Windows.Visibility.Visible;
       }
-    }
-
-    private void addPhotoBtn_Click(object sender, EventArgs e)
-    {
-      pct.Show();
     }
 
     private void confirmBtn_Click(object sender, EventArgs e)
@@ -83,6 +60,20 @@ namespace aMUX
     {
       pct = new PhotoChooserTask() { ShowCamera = true, PixelWidth = 640, PixelHeight = 480 };
       pct.Completed += new EventHandler<PhotoResult>(pct_Completed);
+      pct.Show();
+    }
+
+    private void ScrollViewer_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+    {
+      ip = new InputPrompt();
+      ip.Title = Languages.LangsRes.lblComment;
+
+      ip.Completed += new EventHandler<PopUpEventArgs<string, PopUpResult>>(ip_Completed);
+      ip.Show();
+    }
+
+    private void imgBox_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+    {
       pct.Show();
     }
   }

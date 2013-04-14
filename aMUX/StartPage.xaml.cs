@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+using System.IO.IsolatedStorage;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
-using System.Text.RegularExpressions;
-using System.IO.IsolatedStorage;
 
 namespace aMUX
 {
@@ -22,7 +15,7 @@ namespace aMUX
     public StartPage()
     {
       InitializeComponent();
-      isValid = false;      
+      isValid = false;
     }
 
     private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -52,7 +45,7 @@ namespace aMUX
       IsolatedStorageSettings iss = IsolatedStorageSettings.ApplicationSettings;
 
 #if DEBUG
-      iss["emailAddress"] = "bill@contoso.com";      
+      iss["emailAddress"] = "bill@contoso.com";
       NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
 
 #endif
