@@ -87,7 +87,7 @@ namespace Zel10Support
 
     public bool Execute()
     {
-      if (_jobs.Count > 0)
+      if (_jobs.Count > 0 && !_zel10Client.IsBusy)
       {
         INetWork inw = _jobs.Dequeue();
         inw.ExecuteJob(_zel10Client, NetworkAddresses.ServerAddress);

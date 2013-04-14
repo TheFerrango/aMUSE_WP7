@@ -118,21 +118,29 @@ namespace aMUX
     //When tapping on the opera preview picture, a page with opera-related values is shown
     private void operaPicBox_Tap(object sender, System.Windows.Input.GestureEventArgs e)
     {
+#if DEBUG
+      if(itemInfo == null)
+        itemInfo = new ItemInfos() { author = "Blk", description = "The greatest bongo ever", release_date = "28/10/1971", title = "BonGold" };
+#endif
       if (itemInfo != null)
       {
         PhoneApplicationService.Current.State["ItemInfo"] = itemInfo;
-        //new ItemInfos() { author = "Blk", description = "The greatest bongo ever", release_date = "28/10/1971", title = "BonGold" };
+
         NavigationService.Navigate(new Uri("/OperaViewPage.xaml", UriKind.Relative));
       }
       else
         MessageBox.Show(Languages.LangsRes.noOperaData, Languages.LangsRes.ErrorTit, MessageBoxButton.OK);
     }
 
-
     private void confirmBtn_Click(object sender, EventArgs e)
     {
       PhoneApplicationService.Current.State["NewItem"] = new Scan(operaQR, textPrevBox.Text, photoB64);
       NavigationService.Navigate(new Uri("/MainPage.xaml?action=NewItem", UriKind.Relative));
+    }
+
+    private void PhoneApplicationPage_BackKeyPress(object sender, System.ComponentModel.CancelEventArgs e)
+    {
+      NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
     }
 
     public void LocalizeAppBar()
@@ -148,6 +156,6 @@ namespace aMUX
       tmp.Text = Languages.LangsRes.btnCong;
     }
 
-    #endregion
+    #endregion   
   }
 }
