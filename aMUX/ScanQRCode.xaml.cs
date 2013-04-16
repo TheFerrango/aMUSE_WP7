@@ -12,29 +12,35 @@ using Microsoft.Phone.Shell;
 
 namespace aMUX
 {
-  public partial class ScanOpera : PhoneApplicationPage
+  public partial class ScanQRCode : PhoneApplicationPage
   {
     private readonly DispatcherTimer _timer;
-    private string operaQR;
+    private string stringQR;
+    private string targetPage;
 
     private PhotoCameraLuminanceSource _luminance;
     private QRCodeReader _reader;
     private PhotoCamera _photoCamera;
 
-    public ScanOpera()
+    public ScanQRCode()
     {
       InitializeComponent();
-      operaQR = "";
+      stringQR = "";
       _timer = new DispatcherTimer();
       _timer.Interval = TimeSpan.FromMilliseconds(250);
       _timer.Tick += (o, arg) => ScanPreviewBuffer();
 
 #if DEBUG
       btnAccept.IsEnabled = true;
-      operaQR = "DebugOverride";
+      stringQR = "DebugOverride";
 #endif
     }
 
+    private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
+    {
+      targetPage = NavigationContext.QueryString["TargetPage"] as string;
+    }
+    
     protected override void OnNavigatedTo(NavigationEventArgs e)
     {
       _photoCamera = new PhotoCamera();
@@ -78,10 +84,10 @@ namespace aMUX
 
     private void DisplayResult(string text)
     {
-      if (operaQR == "")
+      if (stringQR == "")
       {
         _timer.Stop();
-        operaQR = text;
+        stringQR = text;
         _previewRect.Stroke = new SolidColorBrush(Color.FromArgb(255, 0, 100, 0));
         btnAccept.IsEnabled = true;
         btnRefuse.IsEnabled = true;
@@ -90,8 +96,8 @@ namespace aMUX
 
     private void btnAccept_Click(object sender, RoutedEventArgs e)
     {
-      PhoneApplicationService.Current.State["OperaQR"] = operaQR;
-      NavigationService.Navigate(new Uri("/AddOpera.xaml", UriKind.Relative));
+      PhoneApplicationService.Current.State["StringQR"] = stringQR;
+      NavigationService.Navigate(new Uri("/" + targetPage, UriKind.Relative));
     }
 
     private void btnRefuse_Click(object sender, RoutedEventArgs e)
@@ -99,12 +105,13 @@ namespace aMUX
       btnAccept.IsEnabled = false;
       btnRefuse.IsEnabled = false;
       _timer.Start();
-      operaQR = "";
+      stringQR = "";
     }
 
     private void PhoneApplicationPage_Unloaded(object sender, RoutedEventArgs e)
     {
       _timer.Stop();
     }
+
   }
 }

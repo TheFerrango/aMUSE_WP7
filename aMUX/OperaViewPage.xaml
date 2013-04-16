@@ -22,7 +22,7 @@
       <controls:PivotItem Header="{Binding Path=LangsRes.pvtPic, Source= {StaticResource LangsManager}}">
         <Grid>
           <StackPanel>
-            <Image Source="Images/uruyat.jpg"></Image>
+            <Image Width="470" Source="Images/uruyat.jpg"></Image>
           </StackPanel>
         </Grid>
       </controls:PivotItem>

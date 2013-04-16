@@ -28,7 +28,7 @@ namespace aMUX
       photoB64 = "";
       NetMan = new Zel10Net();
       NetMan.BatchOperationCompleted += new Zel10Net.BatchOperationCompletedHandler(NetMan_BatchOperationCompleted);
-      operaQR = PhoneApplicationService.Current.State["OperaQR"] as string;
+      operaQR = PhoneApplicationService.Current.State["StringQR"] as string;
       PhoneApplicationService.Current.State.Clear();
     }
 

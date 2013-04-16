@@ -48,7 +48,7 @@ namespace aMUX
 
     private void btnRead_Tap(object sender, System.Windows.Input.GestureEventArgs e)
     {
-      NavigationService.Navigate(new Uri("/ScanOpera.xaml", UriKind.Relative));
+      NavigationService.Navigate(new Uri("/ScanQRCode.xaml?TargetPage=AddOpera.xaml", UriKind.Relative));
     }
 
     private void btnPhoto_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -81,12 +81,12 @@ namespace aMUX
         ss.exp.Add(ivm.ActualContent);
       ss.email = iss["emailAddress"] as string;
       ss.confirm = "24e3261d7bbe24664c1babc75189cfebec04498b";
-      Zel10Net z10n = new Zel10Support.Zel10Net();
-      string jsonFinale = JsonConvert.SerializeObject(ss, Formatting.None);
-      z10n.AddNetJob(new Zel10Support.ContentUpload(jsonFinale));
-      z10n.Execute();
+      PhoneApplicationService.Current.State["ss"] = ss;
       App.ViewModel.Items.Clear();
-      NavigationService.Navigate(new Uri("/StartPage.xaml", UriKind.Relative));
+      NavigationService.Navigate(new Uri("/ScanQRCode.xaml?TargetPage=SendingPage.xaml", UriKind.Relative));
+
+      
+      
     }
 
     private void btnAbo_Click(object sender, EventArgs e)

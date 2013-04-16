@@ -97,6 +97,15 @@ namespace aMUX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string btnCanc {
+            get {
+                return ResourceManager.GetString("btnCanc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please enter a valid email address!.
         /// </summary>
         public static string btnConfMailFAIL {
@@ -129,6 +138,15 @@ namespace aMUX.Languages {
         public static string btnRetake {
             get {
                 return ResourceManager.GetString("btnRetake", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Try again.
+        /// </summary>
+        public static string btnTryAga {
+            get {
+                return ResourceManager.GetString("btnTryAga", resourceCulture);
             }
         }
         
@@ -187,15 +205,6 @@ namespace aMUX.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Opera scan.
-        /// </summary>
-        public static string lblOperaPage {
-            get {
-                return ResourceManager.GetString("lblOperaPage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Opera preview:.
         /// </summary>
         public static string lblOperaPrev {
@@ -214,11 +223,56 @@ namespace aMUX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please wait..
+        /// </summary>
+        public static string lblPlsW8 {
+            get {
+                return ResourceManager.GetString("lblPlsW8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to QR scan.
+        /// </summary>
+        public static string lblQRPage {
+            get {
+                return ResourceManager.GetString("lblQRPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Point a QR code to scan.
         /// </summary>
         public static string lblQRScan {
             get {
                 return ResourceManager.GetString("lblQRScan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occurred while uploading your experience to the server. You can try again or delete your saved experience and start a new one..
+        /// </summary>
+        public static string lblUpldFail {
+            get {
+                return ResourceManager.GetString("lblUpldFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uploading your experience to museum&apos;s server..
+        /// </summary>
+        public static string lblUpldProg {
+            get {
+                return ResourceManager.GetString("lblUpldProg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload.
+        /// </summary>
+        public static string lblUpldTitle {
+            get {
+                return ResourceManager.GetString("lblUpldTitle", resourceCulture);
             }
         }
         

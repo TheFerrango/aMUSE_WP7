@@ -159,8 +159,8 @@
   <data name="lblEmail" xml:space="preserve">
     <value>Enter your email address:</value>
   </data>
-  <data name="lblOperaPage" xml:space="preserve">
-    <value>Opera scan</value>
+  <data name="lblQRPage" xml:space="preserve">
+    <value>QR scan</value>
   </data>
   <data name="lblOperaPrev" xml:space="preserve">
     <value>Opera preview:</value>
@@ -194,5 +194,23 @@
   </data>
   <data name="pvtPic" xml:space="preserve">
     <value>Picture</value>
+  </data>
+  <data name="btnCanc" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="btnTryAga" xml:space="preserve">
+    <value>Try again</value>
+  </data>
+  <data name="lblPlsW8" xml:space="preserve">
+    <value>Please wait.</value>
+  </data>
+  <data name="lblUpldFail" xml:space="preserve">
+    <value>An error occurred while uploading your experience to the server. You can try again or delete your saved experience and start a new one.</value>
+  </data>
+  <data name="lblUpldProg" xml:space="preserve">
+    <value>Uploading your experience to museum's server.</value>
+  </data>
+  <data name="lblUpldTitle" xml:space="preserve">
+    <value>Upload</value>
   </data>
 </root>
