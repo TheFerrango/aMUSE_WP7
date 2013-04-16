@@ -157,5 +157,10 @@ namespace aMUX
     }
 
     #endregion   
+
+    private void PhoneApplicationPage_Unloaded(object sender, RoutedEventArgs e)
+    {
+      NetMan.Abort();
+    }
   }
 }

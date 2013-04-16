@@ -23,6 +23,7 @@ namespace Zel10Support
     public delegate void BatchOperationCompletedHandler(object sender, List<string> results);
     public event BatchOperationCompletedHandler BatchOperationCompleted;
     //string _server;
+    bool _isAborted;
     List<string> _results;
     Queue<INetWork> _jobs;
     CookieAwareWebClient _zel10Client;
@@ -32,6 +33,7 @@ namespace Zel10Support
       _zel10Client = new CookieAwareWebClient();
       _jobs = new Queue<INetWork>();
       _results = new List<string>();
+      _isAborted = false;
       _zel10Client.UploadStringCompleted += new UploadStringCompletedEventHandler(_zel10Client_UploadStringCompleted);
       _zel10Client.DownloadStringCompleted += new DownloadStringCompletedEventHandler(_zel10Client_DownloadStringCompleted);
     }
@@ -53,8 +55,11 @@ namespace Zel10Support
       }
       catch
       {
-        _results.Add("FAIL");
-        BatchOperationCompleted(sender, _results);
+        if (!_isAborted)
+        {
+          _results.Add("FAIL");
+          BatchOperationCompleted(sender, _results);
+        }
       }
     }
 
@@ -87,10 +92,24 @@ namespace Zel10Support
 
     public bool Execute()
     {
+      _isAborted = false;
       if (_jobs.Count > 0 && !_zel10Client.IsBusy)
       {
         INetWork inw = _jobs.Dequeue();
         inw.ExecuteJob(_zel10Client, NetworkAddresses.ServerAddress);
+        return true;
+      }
+      return false;
+    }
+
+    public bool Abort()
+    {
+      _isAborted = true;
+
+      if (_zel10Client.IsBusy)
+      {
+        _jobs.Clear();
+        _zel10Client.CancelAsync();
         return true;
       }
       return false;
