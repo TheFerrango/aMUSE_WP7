@@ -176,6 +176,7 @@
     <Resource Include="Images\Text.png" />
     <Resource Include="Images\uruyat.jpg" />
     <Content Include="README_FIRST.txt" />
+    <Resource Include="SingleBackground.png" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>

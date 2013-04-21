@@ -297,14 +297,9 @@
       <controls:Panorama.Background>
         <ImageBrush ImageSource="/aMUX;component/PanoramaBackground.png" />
       </controls:Panorama.Background>
-      <controls:Panorama.Title >
-        <Grid Height="200">
-          <TextBlock Margin="0,30,0,0" Text="aMUX" FontSize="150"/>
-        </Grid>
-      </controls:Panorama.Title>
-
+      
       <!--Panorama item one-->
-      <controls:PanoramaItem Header="Create">
+      <controls:PanoramaItem Header="create" Margin="0,105,0,0">
         <!--Double line list with text wrapping-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
           <Grid.RowDefinitions>
@@ -358,9 +353,9 @@
 
       <!--Panorama item two-->
       <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
-      <controls:PanoramaItem Header="My items">
+            <controls:PanoramaItem Header="my items" Margin="0,105,0,0">
         <!--Double line list with image placeholder and text wrapping-->
-        <ListBox Margin="0,0,-12,0" x:Name="elementiExp" ItemsSource="{Binding Items}">
+        <ListBox Margin="0,0,-12,0" x:Name="elementiExp" ItemsSource="{Binding Items}" >
           <ListBox.ItemTemplate>
             <DataTemplate>
               <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
