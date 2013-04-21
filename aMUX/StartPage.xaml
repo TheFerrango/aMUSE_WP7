@@ -12,7 +12,7 @@
     
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
-    shell:SystemTray.IsVisible="False">
+    shell:SystemTray.IsVisible="False" Loaded="PhoneApplicationPage_Loaded">
    
     <!--LayoutRoot is the root grid where all page content is placed-->
   <Grid x:Name="LayoutRoot">
@@ -31,7 +31,7 @@
       <StackPanel>
         <TextBlock Text="{ Binding Path=LangsRes.lblEmail, Source={StaticResource LangsManager}}" FontSize="32"></TextBlock>
         <TextBox x:Name="txtBxEmail" Margin="0,10,0,0" FontSize="28" InputScope="EmailNameOrAddress" TextChanged="TextBox_TextChanged"></TextBox>
-        <Button x:Name="btnConfMail" Content="{Binding Path=LangsRes.btnConfMailFAIL, Source={StaticResource LangsManager}}" BorderBrush="Red" Click="btnConfMail_Click" IsEnabled="True"></Button>
+        <Button x:Name="btnConfMail" Content="{Binding Path=LangsRes.btnConfMailFAIL, Source={StaticResource LangsManager}}" BorderBrush="Red" Click="btnConfMail_Click" IsEnabled="True" Foreground="Black"></Button>
 
       </StackPanel>
     </Grid>

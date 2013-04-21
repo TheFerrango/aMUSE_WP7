@@ -14,6 +14,8 @@ namespace aMUX
 {
   public partial class ScanQRCode : PhoneApplicationPage
   {
+    bool isInitialized;
+
     private readonly DispatcherTimer _timer;
     private string stringQR;
     private string targetPage;
@@ -39,6 +41,8 @@ namespace aMUX
     private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
     {
       targetPage = NavigationContext.QueryString["TargetPage"] as string;
+      NavigationContext.QueryString.Clear();
+      isInitialized = true;
     }
     
     protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -111,6 +115,12 @@ namespace aMUX
     private void PhoneApplicationPage_Unloaded(object sender, RoutedEventArgs e)
     {
       _timer.Stop();
+    }
+
+    private void PhoneApplicationPage_BackKeyPress(object sender, System.ComponentModel.CancelEventArgs e)
+    {
+      if (!isInitialized)
+        e.Cancel = true;
     }
 
   }

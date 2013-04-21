@@ -367,8 +367,8 @@
 
                 <Image Margin="12,0,9,0" Height="100" Width="100" Source="{Binding ContentImage}"></Image>
                 <StackPanel Width="311">
-                  <TextBlock Text="{Binding OperaName}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                  <TextBlock Text="{Binding WhatContains}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                  <TextBlock Text="{Binding OperaName}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" Foreground="Black" />
+                  <TextBlock Text="{Binding WhatContains}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="Black" />
                 </StackPanel>
               </StackPanel>
 

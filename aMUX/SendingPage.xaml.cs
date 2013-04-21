@@ -20,9 +20,11 @@ namespace aMUX
   public partial class SendingPage : PhoneApplicationPage
   {
     Zel10Net z10n;
+    string jsonFinale;
     public SendingPage()
     {
       InitializeComponent();
+      jsonFinale = "";
       z10n = new Zel10Support.Zel10Net();
       z10n.BatchOperationCompleted += new Zel10Net.BatchOperationCompletedHandler(z10n_BatchOperationCompleted);
     }
@@ -33,27 +35,34 @@ namespace aMUX
       {
         NavigationService.Navigate(new Uri("/StartPage.xaml", UriKind.Relative));
       }
+      else
+      {
+        stkUpld.Visibility = System.Windows.Visibility.Collapsed;
+        stkFail.Visibility = System.Windows.Visibility.Visible;
+      }
     }
 
     private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
     {
       SendingClass ss = PhoneApplicationService.Current.State["ss"] as SendingClass;
+      ss.confirm = PhoneApplicationService.Current.State["StringQR"] as string;
       PhoneApplicationService.Current.State.Clear();
-      ss.confirm = NavigationContext.QueryString["StringQR"] as string;
-      NavigationContext.QueryString.Clear();
-      string jsonFinale = JsonConvert.SerializeObject(ss, Formatting.None);
+      jsonFinale = JsonConvert.SerializeObject(ss, Formatting.None);
       z10n.AddNetJob(new Zel10Support.ContentUpload(jsonFinale));
       z10n.Execute();
     }
 
     private void btnTryAg_Click(object sender, RoutedEventArgs e)
     {
-
+      stkUpld.Visibility = System.Windows.Visibility.Visible;
+      stkFail.Visibility = System.Windows.Visibility.Collapsed;
+      z10n.AddNetJob(new Zel10Support.ContentUpload(jsonFinale));
+      z10n.Execute();
     }
 
     private void btnCanc_Click(object sender, RoutedEventArgs e)
     {
-
+      NavigationService.Navigate(new Uri("/StartPage.xaml", UriKind.Relative));
     }
   }
 }

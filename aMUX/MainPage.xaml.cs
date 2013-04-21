@@ -27,21 +27,27 @@ namespace aMUX
     // Load data for the ViewModel Items
     private void MainPage_Loaded(object sender, RoutedEventArgs e)
     {
-      if (!App.ViewModel.IsDataLoaded)
+      try
       {
-        App.ViewModel.LoadData();
-      }
+        if (!App.ViewModel.IsDataLoaded)
+        {
+          App.ViewModel.LoadData();
+        }
 
-      if (NavigationContext.QueryString.ContainsKey("action"))
+        if (NavigationContext.QueryString.ContainsKey("action"))
+        {
+          aMUXClasses.Personal item = PhoneApplicationService.Current.State["NewItem"] as aMUXClasses.Personal;
+          string modello = "Personal";
+          if (item is aMUXClasses.Scan)
+            modello = "Scan";
+          App.ViewModel.Items.Add(new ItemViewModel() { ActualContent = item, OperaName = modello });
+          PhoneApplicationService.Current.State.Clear();
+        }
+      }
+      catch(Exception exp)
       {
-        aMUXClasses.Personal item = PhoneApplicationService.Current.State["NewItem"] as aMUXClasses.Personal;
-        string modello = "Personal";
-        if (item is aMUXClasses.Scan)
-          modello = "Scan";
-        App.ViewModel.Items.Add(new ItemViewModel() { ActualContent = item, OperaName = modello });
-        PhoneApplicationService.Current.State.Clear();
+        MessageBox.Show("Huge error!!");
       }
-
       while (NavigationService.CanGoBack)
         NavigationService.RemoveBackEntry();
     }

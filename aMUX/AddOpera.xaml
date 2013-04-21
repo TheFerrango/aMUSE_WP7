@@ -39,23 +39,23 @@
             <ColumnDefinition Width="*"/>
           </Grid.ColumnDefinitions>
           <StackPanel Grid.Column="0">
-                        <TextBlock Margin="0,0,0,10" Text="{Binding Path=LangsRes.lblOperaPrev, Source={StaticResource LangsManager}}" FontSize="26"></TextBlock>
+                        <TextBlock Margin="0,0,0,10" Text="{Binding Path=LangsRes.lblOperaPrev, Source={StaticResource LangsManager}}" FontSize="26" Foreground="Black"></TextBlock>
             <Image  x:Name="operaPicBox" Tap="operaPicBox_Tap" Height="200" Width="200" Source="Images/Download.png" >
 
             </Image>
           </StackPanel>
           <StackPanel Grid.Column="1" x:Name="photoStackPan">
-                        <TextBlock Margin="0,0,0,10" FontSize="26" Text="{Binding Path=LangsRes.lblPhotoPrev, Source={StaticResource LangsManager}}"></TextBlock>
+                        <TextBlock Margin="0,0,0,10" FontSize="26" Text="{Binding Path=LangsRes.lblPhotoPrev, Source={StaticResource LangsManager}}" Foreground="Black"></TextBlock>
             <Image x:Name="picPrevBox" Tap="picPrevBox_Tap" Width="200" Height="200" Source="Images/CameraPic.png"></Image>
           </StackPanel>
         </Grid>
 
         <StackPanel x:Name="commentStackPan" Margin="0,15,0,0">
-                    <TextBlock Margin="0,0,0,10"  FontSize="26" Text="{Binding Path=LangsRes.lblCommentPrev, Source={StaticResource LangsManager}}"></TextBlock>
+                    <TextBlock Margin="0,0,0,10"  FontSize="26" Text="{Binding Path=LangsRes.lblCommentPrev, Source={StaticResource LangsManager}}" Foreground="Black"></TextBlock>
                     <ScrollViewer Tap="ScrollViewer_Tap">
             <StackPanel>
               <Image x:Name="imgAddComm" VerticalAlignment="Center" Width="200" Source="Images/CommResx.png"></Image>
-              <TextBlock FontSize="22" TextWrapping="Wrap" x:Name="textPrevBox"></TextBlock>
+              <TextBlock FontSize="22" TextWrapping="Wrap" x:Name="textPrevBox" Foreground="Black"></TextBlock>
             </StackPanel>
           </ScrollViewer>
         </StackPanel>

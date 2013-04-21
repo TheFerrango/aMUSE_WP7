@@ -11,7 +11,7 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
-    shell:SystemTray.IsVisible="False" Loaded="PhoneApplicationPage_Loaded" Unloaded="PhoneApplicationPage_Unloaded">
+    shell:SystemTray.IsVisible="False" BackKeyPress="PhoneApplicationPage_BackKeyPress"  Loaded="PhoneApplicationPage_Loaded" Unloaded="PhoneApplicationPage_Unloaded">
 
   <!--LayoutRoot is the root grid where all page content is placed-->
   <Grid x:Name="LayoutRoot">
@@ -23,16 +23,15 @@
             <ImageBrush ImageSource="/aMUX;component/SingleBackground.png" />
         </Grid.Background>
     <!--TitlePanel contains the name of the application and page title-->
-    <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-      <TextBlock x:Name="ApplicationTitle" Text="{Binding Path=LangsRes.AppName, Source={ StaticResource LangsManager }}" Style="{StaticResource PhoneTextNormalStyle}"/>
-      <TextBlock x:Name="PageTitle" Text="{Binding Path=LangsRes.lblQRPage, Source={ StaticResource LangsManager }}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+    <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,40,0,28">
+      <TextBlock x:Name="PageTitle" Text="{Binding Path=LangsRes.lblQRPage, Source={ StaticResource LangsManager }}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="Black" />
 
     </StackPanel>
 
     <!--ContentPanel - place additional content here-->
     <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
       <StackPanel>
-        <TextBlock Text="{Binding Path=LangsRes.lblQRScan, Source={StaticResource LangsManager}}" FontSize="32"></TextBlock>
+        <TextBlock Text="{Binding Path=LangsRes.lblQRScan, Source={StaticResource LangsManager}}" FontSize="32" Foreground="Black"></TextBlock>
         <Rectangle x:Name="_previewRect" Margin="0,20,0,30"
                    Width="400"
                            Height="400"
@@ -54,8 +53,8 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
           </Grid.ColumnDefinitions>
-          <Button Grid.Column="0" x:Name="btnAccept" IsEnabled="False" Click="btnAccept_Click" Content="{Binding Path=LangsRes.btnAccept, Source={StaticResource LangsManager}}"></Button>
-          <Button Grid.Column="1" x:Name="btnRefuse" IsEnabled="False" Click="btnRefuse_Click" Content="{Binding Path=LangsRes.btnRetake, Source={StaticResource LangsManager}}"></Button>
+          <Button Grid.Column="0" x:Name="btnAccept" IsEnabled="False" Click="btnAccept_Click" Content="{Binding Path=LangsRes.btnAccept, Source={StaticResource LangsManager}}" Foreground="Black" BorderBrush="Black"></Button>
+          <Button Grid.Column="1" x:Name="btnRefuse" IsEnabled="False" Click="btnRefuse_Click" Content="{Binding Path=LangsRes.btnRetake, Source={StaticResource LangsManager}}" Foreground="Black" BorderBrush="Black"></Button>
 
         </Grid>
       </StackPanel>

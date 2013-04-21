@@ -23,9 +23,8 @@
             <ImageBrush ImageSource="/aMUX;component/SingleBackground.png" />
         </Grid.Background>
     <!--TitlePanel contains the name of the application and page title-->
-    <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-      <TextBlock x:Name="ApplicationTitle" Text="{Binding Path=LangsRes.AppName, Source= {StaticResource LangsManager}}" Style="{StaticResource PhoneTextNormalStyle}"/>
-      <TextBlock x:Name="PageTitle" Text="{Binding Path=LangsRes.btnAddPhoto, Source= {StaticResource LangsManager}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+    <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,47,0,28">
+      <TextBlock x:Name="PageTitle" Text="{Binding Path=LangsRes.btnAddPhoto, Source= {StaticResource LangsManager}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="Black" />
     </StackPanel>
 
     <!--ContentPanel - place additional content here-->
@@ -34,11 +33,11 @@
         <StackPanel>
           <Image Tap="imgBox_Tap" HorizontalAlignment="Center" x:Name="imgBox"  VerticalAlignment="Top" Height="300" Width="406" Stretch="Uniform" Source="Images/CameraPic.png" />
           <StackPanel x:Name="commentStackPan" Margin="0,5,0,0">
-            <TextBlock FontSize="26" Text="{Binding Path=LangsRes.lblCommentPrev, Source={StaticResource LangsManager}}"></TextBlock>
+            <TextBlock FontSize="26" Text="{Binding Path=LangsRes.lblCommentPrev, Source={StaticResource LangsManager}}" Foreground="Black"></TextBlock>
             <ScrollViewer Tap="ScrollViewer_Tap">
               <StackPanel>
-                <Image x:Name="imgAddComm" VerticalAlignment="Center" Width="150" Source="Images/CommResx.png"></Image>
-                <TextBlock FontSize="22" TextWrapping="Wrap" x:Name="textPrevBox"></TextBlock>
+                <Image x:Name="imgAddComm" VerticalAlignment="Center" Width="150" Source="Images/CommResx.png" ></Image>
+                <TextBlock FontSize="22" TextWrapping="Wrap" x:Name="textPrevBox" Foreground="Black"></TextBlock>
               </StackPanel>
             </ScrollViewer>
           </StackPanel>

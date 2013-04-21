@@ -57,5 +57,11 @@ namespace aMUX
         NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
       }
     }
+
+    private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
+    {
+      while (NavigationService.CanGoBack)
+        NavigationService.RemoveBackEntry();
+    }
   }
 }

@@ -10,40 +10,41 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
-    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded">
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False" Loaded="PhoneApplicationPage_Loaded">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="{Binding Path=LangsRes.AppName, Source={ StaticResource LangsManager }}" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="{Binding Path=LangsRes.lblUpldTitle, Source={StaticResource LangsManager}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+    <Grid.Background>
+      <ImageBrush ImageSource="/aMUX;component/SingleBackground.png" />
+    </Grid.Background>
+    <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,40,0,28">
+            <TextBlock x:Name="PageTitle" Text="{Binding Path=LangsRes.lblUpldTitle, Source={StaticResource LangsManager}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="Black" />
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <StackPanel VerticalAlignment="Center" x:Name="stkFail" Margin="0,-120,0,0">
+            <StackPanel VerticalAlignment="Center" Visibility="Collapsed" x:Name="stkFail" Margin="0,-120,0,0">
                 <TextBlock FontSize="20" Foreground="Red" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding Path=LangsRes.lblUpldFail, Source={StaticResource LangsManager}}"></TextBlock>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" x:Name="btnTryAg" IsEnabled="False" Click="btnTryAg_Click" Content="{Binding Path=LangsRes.btnTryAga, Source={StaticResource LangsManager}}"></Button>
-                    <Button Grid.Column="1" x:Name="btnCanc" IsEnabled="False" Click="btnCanc_Click" Content="{Binding Path=LangsRes.btnCanc, Source={StaticResource LangsManager}}"></Button>
+                    <Button Grid.Column="0" x:Name="btnTryAg" Click="btnTryAg_Click" Content="{Binding Path=LangsRes.btnTryAga, Source={StaticResource LangsManager}}" Foreground="Black" BorderBrush="Black"></Button>
+                    <Button Grid.Column="1" x:Name="btnCanc" Click="btnCanc_Click" Content="{Binding Path=LangsRes.btnCanc, Source={StaticResource LangsManager}}" Foreground="Black" BorderBrush="Black"></Button>
 
                 </Grid>
             </StackPanel>
             <StackPanel x:Name="stkUpld" VerticalAlignment="Center" Margin="0,-80,0,0">
-                <TextBlock FontSize="26" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding Path=LangsRes.lblUpldProg, Source={StaticResource LangsManager}}"></TextBlock>
+                <TextBlock FontSize="26" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding Path=LangsRes.lblUpldProg, Source={StaticResource LangsManager}}" Foreground="Black"></TextBlock>
                 <ProgressBar x:Name="prgUpld" IsIndeterminate="True"></ProgressBar>
-                <TextBlock FontSize="24" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding Path=LangsRes.lblPlsW8, Source={StaticResource LangsManager}}"></TextBlock>
+                <TextBlock FontSize="24" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding Path=LangsRes.lblPlsW8, Source={StaticResource LangsManager}}" Foreground="Black"></TextBlock>
             </StackPanel>
         </Grid>
     </Grid>

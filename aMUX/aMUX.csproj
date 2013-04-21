@@ -16,7 +16,8 @@
     <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
     <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
     <SilverlightApplication>true</SilverlightApplication>
-    <SupportedCultures>
+    <SupportedCultures>en-US;it-IT
+	
     </SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
@@ -82,6 +83,11 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="LangsManager.cs" />
+    <Compile Include="Languages\LangsRes.it-IT.Designer.cs">
+      <DependentUpon>LangsRes.it-IT.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Languages\LangsRes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -180,6 +186,10 @@
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Languages\LangsRes.it-IT.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LangsRes.it-IT.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Languages\LangsRes.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LangsRes.Designer.cs</LastGenOutput>
