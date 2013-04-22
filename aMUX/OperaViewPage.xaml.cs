@@ -2,6 +2,9 @@
 using aMUXClasses;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Zel10Support;
+using System.Windows.Media.Imaging;
+using System;
 
 namespace aMUX
 {
@@ -19,10 +22,12 @@ namespace aMUX
     private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
     {
       //TODO: add image loading
-      listAbout.Items.Add(string.Format("{0}: {1}", Languages.LangsRes.ovpTitle, iis.title));
-      listAbout.Items.Add(string.Format("{0}: {1}", Languages.LangsRes.pvtData, iis.release_date));
-      listAbout.Items.Add(string.Format("{0}: {1}", Languages.LangsRes.ovpAuth, iis.author));
-      listAbout.Items.Add(string.Format("{0}: {1}", Languages.LangsRes.ovpDesc, iis.description));
+      operaTitle.Text = iis.title;
+      operaTitleAdv.Text = iis.title;
+      operaData.Text = iis.release_date;
+      operaAuth.Text = iis.author;
+      operaDesc.Text = iis.description;
+      imgOperaBig.Source = new BitmapImage(NetworkAddresses.ObtainItemPicture(iis.photo));
     }
   }
 }

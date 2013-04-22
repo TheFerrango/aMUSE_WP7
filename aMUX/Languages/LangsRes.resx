@@ -213,4 +213,19 @@
   <data name="lblUpldTitle" xml:space="preserve">
     <value>Upload</value>
   </data>
+  <data name="lblCommentTile" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="lblCreate" xml:space="preserve">
+    <value>create</value>
+  </data>
+  <data name="lblMyItems" xml:space="preserve">
+    <value>my items</value>
+  </data>
+  <data name="lblPhotoTile" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="lblScanTile" xml:space="preserve">
+    <value>Scan code</value>
+  </data>
 </root>

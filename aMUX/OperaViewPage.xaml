@@ -29,7 +29,8 @@
 
                 <Grid>
                     <StackPanel>
-                        <Image Width="470" Source="Images/uruyat.jpg"></Image>
+                        <TextBlock x:Name="operaTitle" FontSize="30" Text=""></TextBlock>
+                        <Image Margin="0,10,0,0" Width="450" x:Name="imgOperaBig" Source="Images/uruyat.jpg"></Image>
                     </StackPanel>
                 </Grid>
             </controls:PivotItem>
@@ -37,16 +38,18 @@
             <!--Pivot item two-->
             <controls:PivotItem Header="{Binding Path=LangsRes.pvtData, Source= {StaticResource LangsManager}}">
                 <Grid>
+                    <ScrollViewer>
                     <StackPanel>
-                        <ListBox x:Name="listAbout">
-                            <ListBox.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding}" TextWrapping="Wrap" FontSize="28"></TextBlock>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-
-                        </ListBox>
+                            <TextBlock TextWrapping="Wrap" Text="{Binding Path=LangsRes.ovpTitle, Source= {StaticResource LangsManager}}" FontSize="32"></TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="28" x:Name="operaTitleAdv"></TextBlock>
+                            <TextBlock TextWrapping="Wrap" Text="{Binding Path=LangsRes.ovpRelDate, Source= {StaticResource LangsManager}}" FontSize="32"></TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="28" x:Name="operaData"></TextBlock>
+                            <TextBlock TextWrapping="Wrap" Text="{Binding Path=LangsRes.ovpAuth, Source= {StaticResource LangsManager}}" FontSize="32"></TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="28" x:Name="operaAuth"></TextBlock>
+                            <TextBlock TextWrapping="Wrap" Text="{Binding Path=LangsRes.ovpDesc, Source= {StaticResource LangsManager}}" FontSize="32"></TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="28" x:Name="operaDesc"></TextBlock>
                     </StackPanel>
+                    </ScrollViewer>
                 </Grid>
             </controls:PivotItem>
         </controls:Pivot>

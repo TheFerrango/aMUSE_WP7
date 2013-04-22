@@ -50,7 +50,7 @@
           </StackPanel>
         </Grid>
 
-        <StackPanel x:Name="commentStackPan" Margin="0,15,0,0">
+        <StackPanel x:Name="commentStackPan" Margin="0,50,0,0">
                     <TextBlock Margin="0,0,0,10"  FontSize="26" Text="{Binding Path=LangsRes.lblCommentPrev, Source={StaticResource LangsManager}}" Foreground="Black"></TextBlock>
                     <ScrollViewer Tap="ScrollViewer_Tap">
             <StackPanel>

@@ -199,7 +199,7 @@
     <value>Annulla</value>
   </data>
   <data name="btnTryAga" xml:space="preserve">
-    <value>Ripriova</value>
+    <value>Riprova</value>
   </data>
   <data name="lblPlsW8" xml:space="preserve">
     <value>Prego attendere</value>
@@ -212,5 +212,20 @@
   </data>
   <data name="lblUpldTitle" xml:space="preserve">
     <value>Caricamento</value>
+  </data>
+  <data name="lblCommentTile" xml:space="preserve">
+    <value>Commento</value>
+  </data>
+  <data name="lblCreate" xml:space="preserve">
+    <value>crea</value>
+  </data>
+  <data name="lblMyItems" xml:space="preserve">
+    <value>i miei oggetti</value>
+  </data>
+  <data name="lblPhotoTile" xml:space="preserve">
+    <value>Foto</value>
+  </data>
+  <data name="lblScanTile" xml:space="preserve">
+    <value>Scansiona codice</value>
   </data>
 </root>

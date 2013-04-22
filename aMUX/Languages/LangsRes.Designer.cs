@@ -196,11 +196,38 @@ namespace aMUX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Comment.
+        /// </summary>
+        public static string lblCommentTile {
+            get {
+                return ResourceManager.GetString("lblCommentTile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to create.
+        /// </summary>
+        public static string lblCreate {
+            get {
+                return ResourceManager.GetString("lblCreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter your email address:.
         /// </summary>
         public static string lblEmail {
             get {
                 return ResourceManager.GetString("lblEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to my items.
+        /// </summary>
+        public static string lblMyItems {
+            get {
+                return ResourceManager.GetString("lblMyItems", resourceCulture);
             }
         }
         
@@ -219,6 +246,15 @@ namespace aMUX.Languages {
         public static string lblPhotoPrev {
             get {
                 return ResourceManager.GetString("lblPhotoPrev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Photo.
+        /// </summary>
+        public static string lblPhotoTile {
+            get {
+                return ResourceManager.GetString("lblPhotoTile", resourceCulture);
             }
         }
         
@@ -246,6 +282,15 @@ namespace aMUX.Languages {
         public static string lblQRScan {
             get {
                 return ResourceManager.GetString("lblQRScan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scan code.
+        /// </summary>
+        public static string lblScanTile {
+            get {
+                return ResourceManager.GetString("lblScanTile", resourceCulture);
             }
         }
         
