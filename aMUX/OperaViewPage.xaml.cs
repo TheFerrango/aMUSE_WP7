@@ -29,5 +29,16 @@ namespace aMUX
       operaDesc.Text = iis.description;
       imgOperaBig.Source = new BitmapImage(NetworkAddresses.ObtainItemPicture(iis.photo));
     }
+
+    private void imgOperaBig_ImageFailed(object sender, ExceptionRoutedEventArgs e)
+    {
+      imgOperaBig.Source = new BitmapImage(new Uri("/Images/errorDown.png", UriKind.Relative));
+      prog.IsIndeterminate = false;
+    }
+
+    private void imgOperaBig_ImageOpened(object sender, RoutedEventArgs e)
+    {
+      prog.IsIndeterminate = false;
+    }
   }
 }

@@ -27,6 +27,7 @@ namespace aMUX
     {
       InitializeComponent();
       photoB64 = "";
+      operaID = null;
       NetMan = new Zel10Net();
       NetMan.BatchOperationCompleted += new Zel10Net.BatchOperationCompletedHandler(NetMan_BatchOperationCompleted);
       operaQR = PhoneApplicationService.Current.State["StringQR"] as string;
@@ -42,7 +43,7 @@ namespace aMUX
       LoadBar.IsIndeterminate = true;
       NetMan.AddNetJob(new GetItemInformation(operaQR));
       NetMan.Execute();
-      operaPicBox.Source = new BitmapImage(new Uri("http://www.independent.co.uk/incoming/article8389795.ece/ALTERNATES/w460/BerlusconiGET.jpg"));
+      //operaPicBox.Source = new BitmapImage(new Uri("http://www.independent.co.uk/incoming/article8389795.ece/ALTERNATES/w460/BerlusconiGET.jpg"));
     }
 
     void NetMan_BatchOperationCompleted(object sender, System.Collections.Generic.List<string> results)
@@ -56,6 +57,7 @@ namespace aMUX
       }
       else
       {
+        operaPicBox.Source = new BitmapImage(new Uri("/Images/errorDown.png", UriKind.Relative));
         MessageBox.Show(Languages.LangsRes.ErrorFailRetrieve, Languages.LangsRes.ErrorTit, MessageBoxButton.OK);
       }
     }
@@ -121,7 +123,7 @@ namespace aMUX
     {
 #if DEBUG
       if(itemInfo == null)
-        itemInfo = new ItemInfos() { author = "Blk", description = @"YOU WILL OBEY! EXTERMINATE! Galifrey The Master RUN! Time War EXTERMINATE! Captain Jack Harkness Skaro You will be exterminated! Bow ties are cool. Allons-y, Alonso! Donna Noble River Song Geronimo EXTERMINATE! EXTERMINATE! K-9 Reverse the polarity of the positron flow It's bigger on the inside! EXTERMINATE! RUN! The angels have the phone box Captain Jack Harkness The Silence is Coming! Delete. Delete. Delete. I hereby invoke The Shadow Proclamation! Fantastic! The socks with holes, dummy! The Doctor Rude and not ginger I wear a fez now, fezzes are cool ninehundred  Hello Sweetie. Amy Pond wibbly wobbly timey wimey EXTERMINATE! Bad Wolf  EXTERMINATE! The Silence is Coming! I hereby invoke The Shadow Proclamation! DON'T BLINK! Hello Sweetie. Time Lord The Doctor Bad Wolf Bananas are good Raxacoricofallapatorius the oncoming storm Allons-y Geronimo Bring the Humans to me Donna Noble I wear a fez now, fezzes are cool RUN! The angels have the phone box Donna Noble Hello sweetie Emperor of the Daleks EXTERMINATE! Time War you are not alone in the universe Allons-y, Alonso! Geronimo! EXTERMINATE! DON'T BLINK! It's bigger on the inside! Hello sweetie Amy Pond EXTERMINATE! K-9 EXTERMINATE! Cybermen K-9 EXTERMINATE! Dalekanium Geronimo ninehundred  Reverse the polarity of the neutron flow puny human Bad Wolf the girl who waited I hereby invoke The Shadow Proclamation! Geronimo EXTERMINATE! Reverse the polarity of the neutron flow you are not alone in the universe The Silence is Coming! EXTERMINATE! EXTERMINATE! EXTERMINATE! EXTERMINATE! Rory the Roman Bring the Humans to me Reverse the polarity of the positron flow I really hate stairs. EXTERMINATE ALL STAIRCASES! Are you my mummy? EXTERMINATE! K-9 Emperor of the Daleks The Silence is Coming!", release_date = "28/10/1971", title = "BonGold" };
+        itemInfo = new ItemInfos() { author = "Blk", photo="coccobello", description = @"YOU WILL OBEY! EXTERMINATE! Galifrey The Master RUN! Time War EXTERMINATE! Captain Jack Harkness Skaro You will be exterminated! Bow ties are cool. Allons-y, Alonso! Donna Noble River Song Geronimo EXTERMINATE! EXTERMINATE! K-9 Reverse the polarity of the positron flow It's bigger on the inside! EXTERMINATE! RUN! The angels have the phone box Captain Jack Harkness The Silence is Coming! Delete. Delete. Delete. I hereby invoke The Shadow Proclamation! Fantastic! The socks with holes, dummy! The Doctor Rude and not ginger I wear a fez now, fezzes are cool ninehundred  Hello Sweetie. Amy Pond wibbly wobbly timey wimey EXTERMINATE! Bad Wolf  EXTERMINATE! The Silence is Coming! I hereby invoke The Shadow Proclamation! DON'T BLINK! Hello Sweetie. Time Lord The Doctor Bad Wolf Bananas are good Raxacoricofallapatorius the oncoming storm Allons-y Geronimo Bring the Humans to me Donna Noble I wear a fez now, fezzes are cool RUN! The angels have the phone box Donna Noble Hello sweetie Emperor of the Daleks EXTERMINATE! Time War you are not alone in the universe Allons-y, Alonso! Geronimo! EXTERMINATE! DON'T BLINK! It's bigger on the inside! Hello sweetie Amy Pond EXTERMINATE! K-9 EXTERMINATE! Cybermen K-9 EXTERMINATE! Dalekanium Geronimo ninehundred  Reverse the polarity of the neutron flow puny human Bad Wolf the girl who waited I hereby invoke The Shadow Proclamation! Geronimo EXTERMINATE! Reverse the polarity of the neutron flow you are not alone in the universe The Silence is Coming! EXTERMINATE! EXTERMINATE! EXTERMINATE! EXTERMINATE! Rory the Roman Bring the Humans to me Reverse the polarity of the positron flow I really hate stairs. EXTERMINATE ALL STAIRCASES! Are you my mummy? EXTERMINATE! K-9 Emperor of the Daleks The Silence is Coming!", release_date = "28/10/1971", title = "BonGold" };
 #endif
       if (itemInfo != null)
       {
@@ -135,9 +137,14 @@ namespace aMUX
 
     private void confirmBtn_Click(object sender, EventArgs e)
     {
-      PhoneApplicationService.Current.State["NewItem"] = new Scan(operaID, textPrevBox.Text, photoB64);
-      PhoneApplicationService.Current.State["operaQR"] = operaQR;
-      NavigationService.Navigate(new Uri("/MainPage.xaml?action=NewItem", UriKind.Relative));
+      if (operaID != null)
+      {
+        PhoneApplicationService.Current.State["NewItem"] = new Scan(operaID, textPrevBox.Text, photoB64);
+        PhoneApplicationService.Current.State["operaQR"] = operaQR;
+        NavigationService.Navigate(new Uri("/MainPage.xaml?action=NewItem", UriKind.Relative));
+      }
+      else
+        MessageBox.Show(Languages.LangsRes.lblPlsW8);
     }
 
     private void PhoneApplicationPage_BackKeyPress(object sender, System.ComponentModel.CancelEventArgs e)

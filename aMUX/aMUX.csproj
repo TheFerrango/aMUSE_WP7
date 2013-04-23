@@ -176,7 +176,7 @@
     <Resource Include="Images\CameraPic.png" />
     <Resource Include="Images\Download.png" />
     <Resource Include="Images\CommResx.png" />
-    <Resource Include="Images\errorDown.png" />
+    <Content Include="Images\errorDown.png" />
     <Content Include="Images\TagGen.png" />
     <Content Include="Images\Comment.png" />
     <Content Include="Images\Photo.png" />
