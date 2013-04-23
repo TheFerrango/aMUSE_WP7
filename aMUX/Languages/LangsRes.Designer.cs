@@ -178,6 +178,15 @@ namespace aMUX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string lblCMRem {
+            get {
+                return ResourceManager.GetString("lblCMRem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter your comment below:.
         /// </summary>
         public static string lblComment {

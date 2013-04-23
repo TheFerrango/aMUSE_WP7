@@ -368,7 +368,8 @@
                             <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
                                 <toolkit:ContextMenuService.ContextMenu>
                                     <toolkit:ContextMenu>
-                                        <toolkit:MenuItem x:Name="mnItmRem" Click="mnItmRem_Click" Header="Exterminate"/>
+                                        <toolkit:MenuItem x:Name="mnItmRem" Click="mnItmRem_Click" 
+                                                          Header="{Binding Path=LangsRes.lblCMRem, Source= {StaticResource LangsManager}}"/>
                                     </toolkit:ContextMenu>
                                 </toolkit:ContextMenuService.ContextMenu>
 

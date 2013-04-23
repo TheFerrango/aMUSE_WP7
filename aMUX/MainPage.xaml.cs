@@ -38,10 +38,13 @@ namespace aMUX
         {
           aMUXClasses.Personal item = PhoneApplicationService.Current.State["NewItem"] as aMUXClasses.Personal;
           string modello = "Personal";
-          if (item is aMUXClasses.Scan)
+          string hashOpera = "-1";
+          if (item is aMUXClasses.Scan){
             modello = "Scan";
+            hashOpera = PhoneApplicationService.Current.State["operaQR"] as string;
+          }
           App.ViewModel.Items.Add(new ItemViewModel() { ActualContent = item, OperaName = modello, 
-            InternalID = PhoneApplicationService.Current.State["operaQR"] as string });
+            InternalID = hashOpera });
           PhoneApplicationService.Current.State.Clear();
         }
       }

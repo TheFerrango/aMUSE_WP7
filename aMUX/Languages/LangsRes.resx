@@ -231,4 +231,7 @@
   <data name="msgAlrAdd" xml:space="preserve">
     <value>This item has already been added.</value>
   </data>
+  <data name="lblCMRem" xml:space="preserve">
+    <value>Delete</value>
+  </data>
 </root>
