@@ -322,6 +322,15 @@ namespace aMUX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This item has already been added..
+        /// </summary>
+        public static string msgAlrAdd {
+            get {
+                return ResourceManager.GetString("msgAlrAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nah, sorry, feature not implemented..
         /// </summary>
         public static string msgNotImpl {

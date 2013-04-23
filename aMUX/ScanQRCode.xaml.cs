@@ -7,6 +7,8 @@ using com.google.zxing;
 using com.google.zxing.common;
 using com.google.zxing.qrcode;
 using Microsoft.Devices;
+using System.Linq;
+using System.Linq.Expressions;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
@@ -90,11 +92,19 @@ namespace aMUX
     {
       if (stringQR == "")
       {
-        _timer.Stop();
-        stringQR = text;
-        _previewRect.Stroke = new SolidColorBrush(Color.FromArgb(255, 0, 100, 0));
-        btnAccept.IsEnabled = true;
-        btnRefuse.IsEnabled = true;
+        if (App.ViewModel.Items.Where(x => x.InternalID == text).Count() == 0)
+        {
+          _timer.Stop();
+          stringQR = text;
+          _previewRect.Stroke = new SolidColorBrush(Color.FromArgb(255, 0, 100, 0));
+          btnAccept.IsEnabled = true;
+          btnRefuse.IsEnabled = true;
+        }
+        else
+        {
+          MessageBox.Show(Languages.LangsRes.msgAlrAdd, Languages.LangsRes.ErrorTit, MessageBoxButton.OK);
+          NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+        }
       }
     }
 

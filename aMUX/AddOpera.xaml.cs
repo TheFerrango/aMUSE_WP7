@@ -19,6 +19,7 @@ namespace aMUX
 
     string operaQR;
     string photoB64;
+    string operaID;
     InputPrompt ip;
     ItemInfos itemInfo;
 
@@ -50,7 +51,7 @@ namespace aMUX
       if (results[0] != "FAIL")
       {
         itemInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<ItemInfos>(results[0]);
-        operaQR = itemInfo.id;
+        operaID = itemInfo.id;
         operaPicBox.Source = new BitmapImage(NetworkAddresses.ObtainItemPicture(itemInfo.photo));
       }
       else
@@ -134,7 +135,8 @@ namespace aMUX
 
     private void confirmBtn_Click(object sender, EventArgs e)
     {
-      PhoneApplicationService.Current.State["NewItem"] = new Scan(operaQR, textPrevBox.Text, photoB64);
+      PhoneApplicationService.Current.State["NewItem"] = new Scan(operaID, textPrevBox.Text, photoB64);
+      PhoneApplicationService.Current.State["operaQR"] = operaQR;
       NavigationService.Navigate(new Uri("/MainPage.xaml?action=NewItem", UriKind.Relative));
     }
 
@@ -161,6 +163,11 @@ namespace aMUX
     private void PhoneApplicationPage_Unloaded(object sender, RoutedEventArgs e)
     {
       NetMan.Abort();
+    }
+
+    private void operaPicBox_ImageFailed(object sender, ExceptionRoutedEventArgs e)
+    {
+      operaPicBox.Source = new BitmapImage(new Uri("/Images/errorDown.png", UriKind.Relative));
     }
   }
 }

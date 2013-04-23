@@ -54,6 +54,13 @@ namespace aMUX
       }
     }
 
+    private string _internalID;
+
+    public string InternalID
+    {
+      get { return _internalID; }
+      set { _internalID = value; }
+    }
 
     public string WhatContains
     {

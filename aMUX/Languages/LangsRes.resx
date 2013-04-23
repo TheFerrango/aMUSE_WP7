@@ -228,4 +228,7 @@
   <data name="lblScanTile" xml:space="preserve">
     <value>Scan code</value>
   </data>
+  <data name="msgAlrAdd" xml:space="preserve">
+    <value>This item has already been added.</value>
+  </data>
 </root>

@@ -40,7 +40,8 @@ namespace aMUX
           string modello = "Personal";
           if (item is aMUXClasses.Scan)
             modello = "Scan";
-          App.ViewModel.Items.Add(new ItemViewModel() { ActualContent = item, OperaName = modello });
+          App.ViewModel.Items.Add(new ItemViewModel() { ActualContent = item, OperaName = modello, 
+            InternalID = PhoneApplicationService.Current.State["operaQR"] as string });
           PhoneApplicationService.Current.State.Clear();
         }
       }

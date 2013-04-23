@@ -14,7 +14,7 @@ namespace Zel10Support
   {
     //static string _ServerAddress = "http://panizza1.dyndns.org:2401/";
     //static string _ServerAddress = "http://192.168.1.5:8000/";
-    static string _ServerAddress = "http://10.23.4.109:8000/";
+    static string _ServerAddress = "http://10.23.3.201:8000/";
 
     public static string ServerAddress
     {
