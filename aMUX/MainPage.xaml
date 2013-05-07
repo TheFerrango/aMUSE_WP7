@@ -393,6 +393,7 @@
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Click="btnSend_Click" x:Name="btnSend" Text="Submit experience"/>
                 <shell:ApplicationBarMenuItem Click="btnAbo_Click" x:Name="btnAbo" Text="About Application"/>
+                <shell:ApplicationBarMenuItem Click="chngSrv_Click" x:Name="chngSrv" Text="Change Zerver"/>
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>

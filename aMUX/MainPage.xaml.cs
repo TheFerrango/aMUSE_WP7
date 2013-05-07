@@ -109,5 +109,20 @@ namespace aMUX
       ItemViewModel toRemove = (sender as MenuItem).DataContext as ItemViewModel;
       App.ViewModel.Items.Remove(toRemove);
     }
+
+    private void chngSrv_Click(object sender, EventArgs e)
+    {
+      InputPrompt ip2 = new InputPrompt();
+      ip2.Title = "Zerver address:";
+      ip2.Value = NetworkAddresses.ServerAddress;
+      ip2.Completed += new EventHandler<PopUpEventArgs<string, PopUpResult>>(ip2_Completed);
+      ip2.Show();
+    }
+
+    void ip2_Completed(object sender, PopUpEventArgs<string, PopUpResult> e)
+    {
+      if(e.PopUpResult == PopUpResult.Ok)
+        NetworkAddresses.ServerAddress = e.Result;
+    }
   }
 }

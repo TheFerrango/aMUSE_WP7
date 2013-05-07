@@ -50,6 +50,8 @@ namespace aMUX
       jsonFinale = JsonConvert.SerializeObject(ss, Formatting.None);
       z10n.AddNetJob(new Zel10Support.ContentUpload(jsonFinale));
       z10n.Execute();
+      //System.Threading.Thread.Sleep(5000);
+      //NavigationService.Navigate(new Uri("/StartPage.xaml", UriKind.Relative));
     }
 
     private void btnTryAg_Click(object sender, RoutedEventArgs e)
