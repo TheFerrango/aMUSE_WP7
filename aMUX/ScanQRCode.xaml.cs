@@ -52,9 +52,7 @@ namespace aMUX
       _photoCamera = new PhotoCamera();
       _photoCamera.Initialized += OnPhotoCameraInitialized;
       _previewVideo.SetSource(_photoCamera);
-
-      CameraButtons.ShutterKeyHalfPressed += (o, arg) => _photoCamera.Focus();
-
+      
       base.OnNavigatedTo(e);
     }
 
@@ -131,6 +129,11 @@ namespace aMUX
     {
       if (!isInitialized)
         e.Cancel = true;
+    }
+
+    private void _previewRect_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+    {
+      _photoCamera.Focus();
     }
 
   }

@@ -35,12 +35,9 @@
         <Rectangle x:Name="_previewRect" Margin="0,20,0,30"
                    Width="400"
                            Height="400"
-                           
-                   
-                    
-                   HorizontalAlignment="Center" Stroke="#FFCE1F1F" StrokeThickness="2">
+                   HorizontalAlignment="Center" Tap="_previewRect_Tap" Stroke="#FFCE1F1F" StrokeThickness="2">
           <Rectangle.Fill>
-            <VideoBrush x:Name="_previewVideo">
+            <VideoBrush x:Name="_previewVideo" Stretch="UniformToFill">
               <VideoBrush.RelativeTransform>
                 <CompositeTransform  
                             x:Name="_previewTransform" CenterX=".5" CenterY=".5" />
