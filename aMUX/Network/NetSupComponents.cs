@@ -22,8 +22,9 @@ namespace Zel10Support
       set { NetworkAddresses._ServerAddress = value; }
     }
 
-    static string _UploadPath = "api/exp/s/";
-    static string _ItemInfo = "api/i/";
+    static string uploadPath = "api/exp/s/";
+    static string itemInfo = "api/i/";
+    static string exhibitsList = "e/list/";
 
     public static Uri ObtainItemPicture(string path)
     {
@@ -32,12 +33,17 @@ namespace Zel10Support
 
     public static string ObtainItemInfoAddress(string id)
     {
-      return _ServerAddress + _ItemInfo + id + "/";
+      return _ServerAddress + itemInfo + id + "/";
+    }
+
+    public static string ObtainExhibitsListAddress()
+    {
+      return _ServerAddress + exhibitsList;
     }
 
     public static string ObtainExperienceUploadAddress()
     {
-      return _ServerAddress + _UploadPath;
+      return _ServerAddress + uploadPath;
     }
   }
 }

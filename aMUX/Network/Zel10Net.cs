@@ -164,6 +164,18 @@ namespace Zel10Support
     }
   }
 
+  public class GetLimits : INetWork
+  {
+    public GetLimits()
+    {
+    }
+
+    public void ExecuteJob(CookieAwareWebClient cawc, string address)
+    {
+      cawc.DownloadStringAsync(new Uri(NetworkAddresses.ObtainExhibitsListAddress(), UriKind.Absolute));
+    }
+  }
+
   //I didn't wrote this, took from stackoverflow.com
   public class CookieAwareWebClient : WebClient
   {

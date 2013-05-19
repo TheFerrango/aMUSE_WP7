@@ -234,4 +234,7 @@
   <data name="lblCMRem" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="lblExList" xml:space="preserve">
+    <value>Select the exhibit you will be visiting:</value>
+  </data>
 </root>

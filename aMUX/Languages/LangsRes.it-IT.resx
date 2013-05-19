@@ -234,4 +234,7 @@
   <data name="lblCMRem" xml:space="preserve">
     <value>Rimuovi</value>
   </data>
+  <data name="lblExList" xml:space="preserve">
+    <value>Seleziona l'esibizione che visiterai</value>
+  </data>
 </root>

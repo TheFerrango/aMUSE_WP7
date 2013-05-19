@@ -232,6 +232,15 @@ namespace aMUX.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select the exhibit you will be visiting:.
+        /// </summary>
+        public static string lblExList {
+            get {
+                return ResourceManager.GetString("lblExList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to my items.
         /// </summary>
         public static string lblMyItems {
