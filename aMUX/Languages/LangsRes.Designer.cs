@@ -419,5 +419,14 @@ namespace aMUX.Languages {
                 return ResourceManager.GetString("pvtPic", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have reached the maximum scan limit allowed for this exhibit..
+        /// </summary>
+        public static string scanLimit {
+            get {
+                return ResourceManager.GetString("scanLimit", resourceCulture);
+            }
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.IO.IsolatedStorage;
 using System.Windows;
 using aMUXClasses;
+using System.Linq;
 using Coding4Fun.Toolkit.Controls;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
@@ -58,7 +59,10 @@ namespace aMUX
 
     private void btnRead_Tap(object sender, System.Windows.Input.GestureEventArgs e)
     {
-      NavigationService.Navigate(new Uri("/ScanQRCode.xaml?TargetPage=AddOpera.xaml", UriKind.Relative));
+      if (App.ViewModel.Items.Where(x => x.ActualContent is aMUXClasses.Scan).Count() < Convert.ToInt32(iss["limit"]))
+        NavigationService.Navigate(new Uri("/ScanQRCode.xaml?TargetPage=AddOpera.xaml", UriKind.Relative));
+      else
+        MessageBox.Show(Languages.LangsRes.scanLimit, Languages.LangsRes.ErrorTit, MessageBoxButton.OK);
     }
 
     private void btnPhoto_Tap(object sender, System.Windows.Input.GestureEventArgs e)

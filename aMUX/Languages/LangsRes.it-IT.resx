@@ -237,4 +237,7 @@
   <data name="lblExList" xml:space="preserve">
     <value>Seleziona l'esibizione che visiterai</value>
   </data>
+  <data name="scanLimit" xml:space="preserve">
+    <value>You have reached the maximum scan limit allowed for this exhibit.</value>
+  </data>
 </root>
